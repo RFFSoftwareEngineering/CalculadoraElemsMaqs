@@ -19,14 +19,18 @@ class Window(QWidget):
         Btn = QPushButton("Click Me", self)
         Btn.move(600, 310)
         Btn.setIcon(QIcon("gears-icon-vector.jpg"))
-        Btn.clicked.connect(self.CreateLabels)#cria o signal
+        Btn.clicked.connect(self.CreateWindow)#cria o signal
 
     def CreateLabels (self):
         self.Label1 = QLabel("My Label", self)
         self.Label1.move(600, 210)
         self.Label1.setFont(QFont("Times New Roman", 15))
         self.Label1.show()
-    
+    def CreateWindow (self):
+        self.Window2 = Window()
+        self.setWindowTitle("janela 2 teste")
+        self.setGeometry(120, 70, 600, 370)
+        self.Window2.show()
 
 app = QApplication([])
 janela = Window()
