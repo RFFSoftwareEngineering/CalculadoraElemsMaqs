@@ -25,11 +25,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gears-icon-vector.jpg" />
-    <Content Include="qtquickcontrols2.conf" />
-    <Content Include="Swipe1.ui.qml" />
-    <Content Include="untitled6.qml" />
-    <Content Include="untitled6.qmlproject" />
-    <Content Include="untitled6.qmlproject.qtds" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
