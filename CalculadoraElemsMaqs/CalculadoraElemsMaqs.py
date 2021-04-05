@@ -1,39 +1,16 @@
 import sys
 import PyQt6
 from PyQt6 import QtWidgets, QtGui, QtCore, QtQuick
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QLabel
-from PyQt6.QtGui import QIcon, QFont
-
-class Window(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Calculadora Elementos de Máquinas")
-        self.setWindowIcon(QIcon("gears-icon-vector.jpg"))
-        self.setGeometry(150, 80, 1280, 720)
-        self.setStyleSheet("background-color:gray")
-        self.CreateButtons()
-        
-        
-        
-    def CreateButtons (self):
-        Btn = QPushButton("Click Me", self)
-        Btn.move(600, 310)
-        Btn.setIcon(QIcon("gears-icon-vector.jpg"))
-        Btn.clicked.connect(self.CreateWindow)#cria o signal
-
-    def CreateLabels (self):
-        self.Label1 = QLabel("My Label", self)
-        self.Label1.move(600, 210)
-        self.Label1.setFont(QFont("Times New Roman", 15))
-        self.Label1.show()
-    def CreateWindow (self):
-        self.Window2 = Window()
-        self.setWindowTitle("janela 2 teste")
-        self.setGeometry(120, 70, 600, 370)
-        self.Window2.show()
+from PySide6.QtWidgets import QApplication
+from PySide6.QtQuick import QQuickView
+from PySide6.QtCore import QUrl
 
 app = QApplication([])
-janela = Window()
-janela.show()
+view = QQuickView()
+url = QUrl("untitled6.qml")
 
-sys.exit(app.exec())
+view.setSource(url)
+view.show()
+app.exec_()
+
+# Btn.clicked.connect(self.CreateWindow)cria o signal
