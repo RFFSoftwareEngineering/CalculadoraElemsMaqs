@@ -21,11 +21,21 @@ class Window(QMainWindow):
         
         scene = QGraphicsScene(self)
         texto = scene.addText("teste")
+        pixmap1 = QGraphicsPixmapItem(QPixmap("gears-icon-vector"))
+        
+        pixmap1.setFlag(QGraphicsItem.ItemIsMovable)
+        
         item = QtWidgets.QGraphicsRectItem(0, 0, 200, 200)
         texto.setFlag(QGraphicsItem.ItemIsMovable)
         item.setFlag(QGraphicsItem.ItemIsMovable)
+        
+        
                
-        scene.addItem(item)
+        scene.addItem(item) 
+        scene.addItem(pixmap1)
+        
+        
+        
         
    
         
