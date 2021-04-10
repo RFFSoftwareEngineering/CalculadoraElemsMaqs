@@ -6,49 +6,39 @@ from PySide6.QtGui import *
 from PySide6.QtCore import *
 from PySide6.QtWidgets import QGraphicsItem
 
-class Window(QMainWindow):
+class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Teste")
-        self.setGeometry(300, 200, 500, 500)
+        self.setWindowTitle("Calculadora Elementos de Máquinas")
+        self.setGeometry(150, 100, 1280, 720)
+        self.setWindowIcon(QIcon("gears-icon-vector"))
         self.show()
-        self.CreateUI()
-        
-        
+        self.CreateScene()
 
-    def CreateUI(self):
-        
-        scene = QGraphicsScene(self)
-        texto = scene.addText("teste")
+
+    def CreateScene(self):
+
+        Cena = QGraphicsScene(self)
+        texto = Cena.addText("teste")
+
         pixmap1 = QGraphicsPixmapItem(QPixmap("gears-icon-vector"))
-        
         pixmap1.setFlag(QGraphicsItem.ItemIsMovable)
-        
+        pixmap1.setScale(0.4)
+
         item = QtWidgets.QGraphicsRectItem(0, 0, 200, 200)
         texto.setFlag(QGraphicsItem.ItemIsMovable)
         item.setFlag(QGraphicsItem.ItemIsMovable)
         
-        
-               
-        scene.addItem(item) 
-        scene.addItem(pixmap1)
-        
-        
-        
-        
-   
-        
-        
-            
-        
-        
 
-        self.view = QGraphicsView(scene, self)
-        self.view.setGeometry(0, 0, 500, 500)
-        self.view.show()
+        Cena.addItem(item)
+        Cena.addItem(pixmap1)
+
+        self.Visao = QGraphicsView(Cena, self)
+        self.Visao.setGeometry(0, 0, 500, 720)
+        self.Visao.show()
 
 
 app = QApplication([])
-window = Window()
+janela = Window()
 sys.exit(app.exec_())
