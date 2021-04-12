@@ -15,9 +15,11 @@ class Window(QWidget):
         self.setWindowIcon(QIcon("gears-icon-vector"))
         self.setStyleSheet("background-color: rgb(51, 51, 53)")
         #space for function calls
-
-
         self.MWSkeleton()
+        self.MWSceneanView()
+        self.MWBotaoTeste()
+        
+
         self.show()
 
 
@@ -31,8 +33,41 @@ class Window(QWidget):
         self.LabelInfo1 = QLabel("Escolha o Elemento:", self)
         self.LabelInfo1.setFont(QFont("Arial", 16, 2, True))
         self.LabelInfo1.setStyleSheet("color: rgb(17, 11, 26)")
-        self.LabelInfo1.move(900,42)
+        self.LabelInfo1.move(800, 50)
+
+
+    def MWSceneanView (self):
+
+        self.CenaMain = QGraphicsScene(self)
+
+        self.pixmap1 = QGraphicsPixmapItem(QPixmap("gears-icon-vector"))
+        self.pixmap1.setFlag(QGraphicsItem.ItemIsMovable)
+        self.pixmap1.setScale(0.30)
+
+        self.CenaMain.addItem(self.pixmap1)
+        #logic test:
+        def MWView (self):
+            self.MainView = QGraphicsView(self.CenaMain, self)
+            self.MainView.setGeometry(0, 45, 500, 675)
+        MWView(self)
+
+                
+    def Teste (self):
         
+        x = float()
+        x += 1
+
+        self.pixmap1.setRotation(x)
+        
+    def MWBotaoTeste (self):
+        self.BotaodoTeste = QPushButton("teste", self)
+        self.BotaodoTeste.move(200, 15)
+        self.BotaodoTeste.clicked.connect(self.Teste)
+        
+        
+            
+
+            
         
 
 
