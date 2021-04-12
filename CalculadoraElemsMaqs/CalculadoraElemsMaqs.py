@@ -39,11 +39,10 @@ class Window(QWidget):
     def MWSceneanView (self):
 
         self.CenaMain = QGraphicsScene(self)
-
+        #pixmap(s) prep:
         self.pixmap1 = QGraphicsPixmapItem(QPixmap("gears-icon-vector"))
         self.pixmap1.setFlag(QGraphicsItem.ItemIsMovable)
-        self.pixmap1.setScale(0.30)
-        self.pixmap1.toGraphicsObject()
+        self.pixmap1.setScale(0.16)
 
         self.CenaMain.addItem(self.pixmap1)
         #logic test:
@@ -58,7 +57,7 @@ class Window(QWidget):
 
     def LinhaofTempo (self):
 
-        self.linha = QTimeLine(1000)
+        self.linha = QTimeLine(2000)
         self.linha.setFrameRange(0, 1000)
         self.linha.setLoopCount(0)
         def reloginho (self):
@@ -69,8 +68,11 @@ class Window(QWidget):
             self.animenation = QGraphicsItemAnimation(self)
             self.animenation.setTimeLine(self.linha)
             self.animenation.setItem(self.pixmap1)
-            self.animenation.setPosAt(0.0, QPointF(0.0, 0.0))
-            self.animenation.setRotationAt(0.1, 30)
+            self.animenation.setPosAt(0.0, QPointF(320.0, 500.0))
+            self.animenation.setPosAt(0.5, QPointF(160.0, 500.0))
+            self.animenation.setPosAt(1.0, QPointF(0.0, 500.0))
+            
+                                                
             
         Anime(self)
         self.linha.start()
