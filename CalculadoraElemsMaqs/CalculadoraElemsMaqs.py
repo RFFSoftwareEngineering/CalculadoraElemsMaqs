@@ -4,7 +4,8 @@ from PySide6 import QtWidgets, QtGui, QtCore
 from PySide6.QtWidgets import *
 from PySide6.QtGui import *
 from PySide6.QtCore import *
-from PySide6.QtWidgets import QGraphicsItem
+
+
 
 class Window(QWidget):
     def __init__(self):
@@ -17,7 +18,6 @@ class Window(QWidget):
         #space for function calls
         self.MWSkeleton()
         self.MWSceneanView()
-        self.MWBotaoTeste()
         
 
         self.show()
@@ -51,30 +51,13 @@ class Window(QWidget):
             self.MainView.setGeometry(0, 45, 500, 675)
         MWView(self)
 
-                
-    def Teste (self):
-        
-        x = float()
-        x += 1
 
-        self.pixmap1.setRotation(x)
-        
-    def MWBotaoTeste (self):
-        self.BotaodoTeste = QPushButton("teste", self)
-        self.BotaodoTeste.move(200, 15)
-        self.BotaodoTeste.clicked.connect(self.Teste)
-        
-        
-            
-
-            
-        
+############################AnimationSection#################################
 
 
 
 
-
-
+############################Ending###########################################
 app = QApplication([])
 janela = Window()
 sys.exit(app.exec_())
