@@ -24,6 +24,7 @@
     <Compile Include="CalculadoraElemsMaqs.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="chave-parafuso.png" />
     <Content Include="gears-icon-vector.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

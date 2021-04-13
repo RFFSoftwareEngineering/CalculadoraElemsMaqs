@@ -44,7 +44,12 @@ class Window(QWidget):
         self.pixmap1.setFlag(QGraphicsItem.ItemIsMovable)
         self.pixmap1.setScale(0.16)
 
+        self.pixmap2 = QGraphicsPixmapItem(QPixmap("chave-parafuso"))
+        self.pixmap2.setFlag(QGraphicsItem.ItemIsMovable)
+        self.pixmap2.setScale(0.4)
+
         self.CenaMain.addItem(self.pixmap1)
+        self.CenaMain.addItem(self.pixmap2)
         #logic test:
         def MWView (self):
             self.MainView = QGraphicsView(self.CenaMain, self)
@@ -56,25 +61,46 @@ class Window(QWidget):
 
 
     def LinhaofTempo (self):
+        #def timeline and timer
 
         self.linha = QTimeLine(2000)
         self.linha.setFrameRange(0, 1000)
         self.linha.setLoopCount(0)
+
         def reloginho (self):
+
             self.timer = QTimer()
             self.timer.isSingleShot()
-        reloginho(self)
+
+        reloginho(self) #call timer
+
+        #animation1:
+
         def Anime (self):
+
             self.animenation = QGraphicsItemAnimation(self)
             self.animenation.setTimeLine(self.linha)
             self.animenation.setItem(self.pixmap1)
-            self.animenation.setPosAt(0.0, QPointF(320.0, 500.0))
-            self.animenation.setPosAt(0.5, QPointF(160.0, 500.0))
-            self.animenation.setPosAt(1.0, QPointF(0.0, 500.0))
+            self.animenation.setPosAt(0.0, QPointF(350.0, 480.0))
+            self.animenation.setPosAt(0.5, QPointF(160.0, 480.0))
+            self.animenation.setPosAt(1.0, QPointF(49.0, 480.0))
+
+        #animation2:
+        
+        def Ani2 (self):
+
+            self.animation2 = QGraphicsItemAnimation(self)
+            self.animation2.setTimeLine(self.linha)
+            self.animation2.setItem(self.pixmap2)
+            self.animation2.setPosAt(0.0, QPointF(-180.0, 130.0))
+            self.animation2.setRotationAt(0.0, -25.0)
+            self.animation2.setRotationAt(0.4, -9.0)
             
                                                 
-            
+        #animations finalization: 
+           
         Anime(self)
+        Ani2(self)
         self.linha.start()
         
 
