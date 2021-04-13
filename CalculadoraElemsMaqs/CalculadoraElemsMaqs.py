@@ -40,9 +40,9 @@ class Window(QWidget):
 
         self.CenaMain = QGraphicsScene(self)
         #pixmaps prep:
-        self.pixmap1 = QGraphicsPixmapItem(QPixmap("gears-icon-vector"))
+        self.pixmap1 = QGraphicsPixmapItem(QPixmap("engine"))
         self.pixmap1.setFlag(QGraphicsItem.ItemIsMovable)
-        self.pixmap1.setScale(0.16)
+        self.pixmap1.setScale(0.26)
 
         self.pixmap2 = QGraphicsPixmapItem(QPixmap("chave-parafuso"))
         self.pixmap2.setFlag(QGraphicsItem.ItemIsMovable)
@@ -55,10 +55,15 @@ class Window(QWidget):
         self.sparkpix = QGraphicsPixmapItem(QPixmap("sparky"))
         self.sparkpix.setScale(0.5)
 
+        self.planepix = QGraphicsPixmapItem(QPixmap("plane"))
+        self.planepix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.planepix.setScale(0.8)
+
         self.CenaMain.addItem(self.pixmap1)
         self.CenaMain.addItem(self.pixmap2)
         self.CenaMain.addItem(self.thehammer)
         self.CenaMain.addItem(self.sparkpix)
+        self.CenaMain.addItem(self.planepix)
 
         #logic test:
         def MWView (self):
@@ -91,9 +96,11 @@ class Window(QWidget):
             self.animenation = QGraphicsItemAnimation(self)
             self.animenation.setTimeLine(self.linha)
             self.animenation.setItem(self.pixmap1)
-            self.animenation.setPosAt(0.0, QPointF(350.0, 480.0))
-            self.animenation.setPosAt(0.25, QPointF(160.0, 480.0))
-            self.animenation.setPosAt(0.5, QPointF(49.0, 480.0))
+            self.animenation.setPosAt(0.0, QPointF(150.0, 480.0))
+            self.animenation.setRotationAt(0.1, -5)
+            self.animenation.setRotationAt(0.15, 0)
+            self.animenation.setRotationAt(0.22, -5)
+            self.animenation.setRotationAt(0.27, 0)
 
         #animation2:
         
@@ -133,10 +140,19 @@ class Window(QWidget):
             self.sparkanim.setPosAt(0.16, QPointF(385.0, 210.0))
             self.sparkanim.setPosAt(0.17, QPointF(385.0, 200.0))
 
-                      
+        #animation5:
 
-            
-            
+        def PlaneAni (self):
+
+            self.planeanimation = QGraphicsItemAnimation(self)
+            self.planeanimation.setTimeLine(self.linha)
+            self.planeanimation.setItem(self.planepix)
+            self.planeanimation.setPosAt(0.0, QPointF(40.0, 320.0))
+            self.planeanimation.setRotationAt(0.0, 90.0)
+            self.planeanimation.setPosAt(0.1, QPointF(150, 320))
+            self.planeanimation.setPosAt(0.2, QPointF(260, 320))
+            self.planeanimation.setPosAt(0.3, QPointF(450, 320))
+            self.planeanimation.setPosAt(0.4, QPointF(670, 320))
             
                                                 
         #animations finalization: 
@@ -145,6 +161,7 @@ class Window(QWidget):
         Ani2(self)
         HammerAni(self)
         SparkAni(self)
+        PlaneAni(self)
         #events:
         self.linha.start()
         

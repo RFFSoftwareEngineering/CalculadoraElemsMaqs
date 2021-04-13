@@ -25,7 +25,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chave-parafuso.png" />
-    <Content Include="gears-icon-vector.jpg" />
+    <Content Include="engine.png" />
+    <Content Include="plane.png" />
     <Content Include="sparky.png" />
     <Content Include="thor-hammer-icon.png" />
   </ItemGroup>
