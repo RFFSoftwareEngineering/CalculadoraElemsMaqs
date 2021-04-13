@@ -26,6 +26,8 @@
   <ItemGroup>
     <Content Include="chave-parafuso.png" />
     <Content Include="gears-icon-vector.jpg" />
+    <Content Include="sparky.png" />
+    <Content Include="thor-hammer-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

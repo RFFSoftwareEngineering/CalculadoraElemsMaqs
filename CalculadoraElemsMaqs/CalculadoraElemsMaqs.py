@@ -48,8 +48,18 @@ class Window(QWidget):
         self.pixmap2.setFlag(QGraphicsItem.ItemIsMovable)
         self.pixmap2.setScale(0.4)
 
+        self.thehammer = QGraphicsPixmapItem(QPixmap("thor-hammer-icon"))
+        self.thehammer.setFlag(QGraphicsItem.ItemIsMovable)
+        self.thehammer.setScale(0.4)
+
+        self.sparkpix = QGraphicsPixmapItem(QPixmap("sparky"))
+        self.sparkpix.setScale(0.5)
+
         self.CenaMain.addItem(self.pixmap1)
         self.CenaMain.addItem(self.pixmap2)
+        self.CenaMain.addItem(self.thehammer)
+        self.CenaMain.addItem(self.sparkpix)
+
         #logic test:
         def MWView (self):
             self.MainView = QGraphicsView(self.CenaMain, self)
@@ -82,8 +92,8 @@ class Window(QWidget):
             self.animenation.setTimeLine(self.linha)
             self.animenation.setItem(self.pixmap1)
             self.animenation.setPosAt(0.0, QPointF(350.0, 480.0))
-            self.animenation.setPosAt(0.5, QPointF(160.0, 480.0))
-            self.animenation.setPosAt(1.0, QPointF(49.0, 480.0))
+            self.animenation.setPosAt(0.25, QPointF(160.0, 480.0))
+            self.animenation.setPosAt(0.5, QPointF(49.0, 480.0))
 
         #animation2:
         
@@ -100,12 +110,42 @@ class Window(QWidget):
             self.animation2.setPosAt(0.41, QPointF(-180.0, 50.0))
 
         #animation3(the hammer):
+
+        def HammerAni (self):
+
+            self.hammerAnim = QGraphicsItemAnimation(self)
+            self.hammerAnim.setTimeLine(self.linha)
+            self.hammerAnim.setItem(self.thehammer)
+            self.hammerAnim.setPosAt(0.0, QPointF(420.0, 300.0))
+            self.hammerAnim.setRotationAt(0.0, -160.0)
+            self.hammerAnim.setRotationAt(0.15, -100.0)
+            self.hammerAnim.setPosAt(0.16, QPointF(320.0, 350.0))
+
+        #animation4:
+
+        def SparkAni (self):
+
+            self.sparkanim = QGraphicsItemAnimation(self)
+            self.sparkanim.setTimeLine(self.linha)
+            self.sparkanim.setItem(self.sparkpix)
+            self.sparkanim.setPosAt(0.0, QPointF(385.0, 198.0))
+            self.sparkanim.setPosAt(0.155, QPointF(385.0, 198.0))
+            self.sparkanim.setPosAt(0.16, QPointF(385.0, 210.0))
+            self.sparkanim.setPosAt(0.17, QPointF(385.0, 200.0))
+
+                      
+
+            
+            
             
                                                 
         #animations finalization: 
            
         Anime(self)
         Ani2(self)
+        HammerAni(self)
+        SparkAni(self)
+        #events:
         self.linha.start()
         
 
