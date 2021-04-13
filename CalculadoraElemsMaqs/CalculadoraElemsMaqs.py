@@ -39,7 +39,7 @@ class Window(QWidget):
     def MWSceneanView (self):
 
         self.CenaMain = QGraphicsScene(self)
-        #pixmap(s) prep:
+        #pixmaps prep:
         self.pixmap1 = QGraphicsPixmapItem(QPixmap("gears-icon-vector"))
         self.pixmap1.setFlag(QGraphicsItem.ItemIsMovable)
         self.pixmap1.setScale(0.16)
@@ -92,9 +92,14 @@ class Window(QWidget):
             self.animation2 = QGraphicsItemAnimation(self)
             self.animation2.setTimeLine(self.linha)
             self.animation2.setItem(self.pixmap2)
-            self.animation2.setPosAt(0.0, QPointF(-180.0, 130.0))
-            self.animation2.setRotationAt(0.0, -25.0)
-            self.animation2.setRotationAt(0.4, -9.0)
+            self.animation2.setPosAt(0.0, QPointF(-150.0, 170.0))
+            self.animation2.setRotationAt(0.0, -33.0)
+            self.animation2.setPosAt(0.3, QPointF(-180.0, 100.0))
+            self.animation2.setRotationAt(0.4, -3.0)
+            self.animation2.setPosAt(0.4, QPointF(-180.0, 70.0))
+            self.animation2.setPosAt(0.41, QPointF(-180.0, 50.0))
+
+        #animation3(the hammer):
             
                                                 
         #animations finalization: 
