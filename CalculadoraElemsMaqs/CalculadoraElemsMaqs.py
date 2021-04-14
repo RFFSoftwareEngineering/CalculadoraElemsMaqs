@@ -7,7 +7,7 @@ from PySide6.QtCore import *
 
 
 
-class Window(QWidget):
+class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -19,7 +19,7 @@ class Window(QWidget):
         self.MWSkeleton()
         self.MWSceneanView()
         self.LinhaofTempo()
-
+        self.MainWindowBtns()
         self.show()
 
 
@@ -259,10 +259,41 @@ class Window(QWidget):
         GearAni(self)
         #events:
         self.linha.start()
+
+#############################################################################
+
+#functional part:
+    
+#Main-Window Buttons:
+
+    def MainWindowBtns (self):
+
+        self.TesteBtn = QPushButton("test", self)
+        self.TesteBtn.move(800, 200)
+        self.TesteBtn.clicked.connect(self.CreateNewWin)
+
+    def CreateNewWin (self):
+        self.TestWindow = QWidget()
+        self.TestWindow.setGeometry(200, 200, 400, 400)
+        self.MWSk()
+        self.TestWindow.show()
+
+    def MWSk (self):
+
+        self.LabelT = QLabel("Calculadora de Elementos de Máquinas", self.TestWindow)
+        self.LabelT.show()
+
+        
+        
+        
+
+        
+        
         
 
 
 ############################Ending###########################################
-app = QApplication([])
-janela = Window()
-sys.exit(app.exec_())
+if __name__ == "__main__":
+    app = QApplication([])
+    janela = MainWindow()
+    sys.exit(app.exec_())
