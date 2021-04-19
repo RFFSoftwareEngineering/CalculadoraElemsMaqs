@@ -18,6 +18,7 @@ class MainWindow(QWidget):
         #space for function calls in the main window
         self.MWSkeleton()
         self.MainWindowBtns()
+        self.SceanVie()
         self.show()
 
 
@@ -58,7 +59,18 @@ class MainWindow(QWidget):
         self.LabelT.show()
 
 
+############################################################################
+#Scene&View:
 
+    def SceanVie(self):
+
+        self.Cena = QGraphicsScene(self)
+        #logic test:
+        def MWView (self):
+            self.MainView = QGraphicsView(self.Cena, self)
+            self.MainView.setGeometry(0, 45, 500, 675)
+            #self.MainView.setStyleSheet("border-style: outset")
+        MWView(self)
 
 
 ############################Ending###########################################
