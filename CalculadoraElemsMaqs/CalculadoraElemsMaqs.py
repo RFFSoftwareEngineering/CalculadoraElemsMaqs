@@ -247,7 +247,7 @@ class MainWindow(QWidget):
             self.gearanimation1.setPosAt(0.79, QPointF(320.0, 82.0))
             self.gearanimation1.setRotationAt(1.0, 360)
             self.gearanimation1.setPosAt(0.99, QPointF(305.0, 35.0))
-
+            
         #animations finalization: 
            
         Anime(self)
@@ -257,7 +257,6 @@ class MainWindow(QWidget):
         PlaneAni(self)
         ShipAni(self)
         GearAni(self)
-        #events:
         self.linha.start()
 
 #############################################################################
