@@ -278,24 +278,46 @@ class MainWindow(QWidget):
         self.GearsWindow.setWindowTitle("Seção das Engrenagens")
         #space for function calls:
         self.MWSk()
+        self.SomaFields()
         self.GearsWindow.show()
 #gears window functions:
 
     def MWSk (self):
 
         self.LabelT = QLabel("Calculadora de Elementos de Máquinas", self.GearsWindow)
-        self.LabelT.show()
+
+#test:
+
+    def SomaFields (self):
+
+        self.field1 = QLineEdit("teste", self.GearsWindow)
+        self.field1.move(0, 20)
+        self.field2 = QLineEdit("teste2", self.GearsWindow)
+        self.field2.move(150, 20)
+        self.Calcular = QPushButton("soma", self.GearsWindow)
+        self.Calcular.move(100, 50)
+        self.Calcular.clicked.connect(self.TesteSoma)
+
+    def TesteSoma (self):
+
+        self.Input1 = self.field1.text()
+        self.Input2 = self.field2.text()
+        self.a = float(self.Input1)
+        self.b = float(self.Input2)
+        self.res = self.a + self.b
+        self.ResultadoField = QLabel("teste" , self.GearsWindow)
+        self.ResultadoField.setText(str(self.res))
+        self.ResultadoField.move(75, 80)
+        self.ResultadoField.show()
+        
+        
+        
 
         
         
-        
-
-        
-        
-        
-
-
+ 
 ############################Ending###########################################
+
 if __name__ == "__main__":
     app = QApplication([])
     janela = MainWindow()
