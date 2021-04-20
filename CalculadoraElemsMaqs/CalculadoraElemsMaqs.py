@@ -24,6 +24,7 @@ class MainWindow(QWidget):
 
 
 #########################################################################
+#MainWindow:
     def MWSkeleton (self):
 
         self.LabelTtl = QLabel("Calculadora de Elementos de Máquinas", self)
@@ -35,7 +36,7 @@ class MainWindow(QWidget):
         self.LabelInfo1.setStyleSheet("color: rgb(17, 11, 26)")
         self.LabelInfo1.move(800, 50)
 
-
+#MainWindow Scene and View
     def MWSceneanView (self):
 
         self.CenaMain = QGraphicsScene(self)
@@ -82,7 +83,7 @@ class MainWindow(QWidget):
         MWView(self)
 
 
-############################AnimationSection#################################
+############################AnimationSection(MainWindow)#################################
 
 
     def LinhaofTempo (self):
@@ -257,13 +258,10 @@ class MainWindow(QWidget):
         PlaneAni(self)
         ShipAni(self)
         GearAni(self)
-        #events:
+        #TimelineCall:
         self.linha.start()
 
 #############################################################################
-
-#functional part:
-    
 #Main-Window Buttons:
 
     def MainWindowBtns (self):
@@ -271,16 +269,21 @@ class MainWindow(QWidget):
         self.TesteBtn = QPushButton("test", self)
         self.TesteBtn.move(800, 200)
         self.TesteBtn.clicked.connect(self.CreateNewWin)
+#gears Window:
 
     def CreateNewWin (self):
-        self.TestWindow = QWidget()
-        self.TestWindow.setGeometry(200, 200, 400, 400)
+        self.GearsWindow = QWidget()
+        self.GearsWindow.setGeometry(650, 190, 780, 602)
+        self.GearsWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.GearsWindow.setWindowTitle("Seção das Engrenagens")
+        #space for function calls:
         self.MWSk()
-        self.TestWindow.show()
+        self.GearsWindow.show()
+#gears window functions:
 
     def MWSk (self):
 
-        self.LabelT = QLabel("Calculadora de Elementos de Máquinas", self.TestWindow)
+        self.LabelT = QLabel("Calculadora de Elementos de Máquinas", self.GearsWindow)
         self.LabelT.show()
 
         
