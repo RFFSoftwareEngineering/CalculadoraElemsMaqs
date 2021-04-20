@@ -90,7 +90,7 @@ class MainWindow(QWidget):
 
         self.linha = QTimeLine(2000)
         self.linha.setFrameRange(0, 1000)
-        self.linha.setLoopCount(0)
+        self.linha.setLoopCount(10)
 
         def reloginho (self):
 
