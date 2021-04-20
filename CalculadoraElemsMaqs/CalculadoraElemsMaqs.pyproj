@@ -24,13 +24,7 @@
     <Compile Include="CalculadoraElemsMaqs.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cargoship.png" />
-    <Content Include="chave-parafuso.png" />
-    <Content Include="engine.png" />
     <Content Include="gear-icon-vector.png" />
-    <Content Include="plane.png" />
-    <Content Include="sparky.png" />
-    <Content Include="thor-hammer-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
