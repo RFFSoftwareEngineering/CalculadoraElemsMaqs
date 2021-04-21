@@ -297,6 +297,15 @@ class MainWindow(QWidget):
         self.Calcular = QPushButton("soma", self.GearsWindow)
         self.Calcular.move(100, 50)
         self.Calcular.clicked.connect(self.TesteSoma)
+        #test:
+        self.Butao = QPushButton("teste3", self.GearsWindow)
+        self.Butao.move(160, 90)
+        self.Butao.clicked.connect(self.WindowInWindow)
+
+    def WindowInWindow (self):
+
+        self.Windowisidewindow = QWidget()
+        self.Windowisidewindow.show()
 
     def TesteSoma (self):
 
