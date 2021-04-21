@@ -32,6 +32,7 @@
     <Content Include="plane.png" />
     <Content Include="sparky.png" />
     <Content Include="thor-hammer-icon.png" />
+    <Content Include="trainpic.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
