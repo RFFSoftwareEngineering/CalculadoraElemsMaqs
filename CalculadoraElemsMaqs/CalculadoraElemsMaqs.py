@@ -76,6 +76,10 @@ class MainWindow(QWidget):
         self.trainpix.setFlag(QGraphicsItem.ItemIsMovable)
         self.trainpix.setScale(0.2)
 
+        self.furnacepix = QGraphicsPixmapItem(QPixmap("furnace"))
+        self.furnacepix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.furnacepix.setScale(0.7)
+
 
         self.CenaMain.addItem(self.pixmap1)
         self.CenaMain.addItem(self.pixmap2)
@@ -86,6 +90,7 @@ class MainWindow(QWidget):
         self.CenaMain.addItem(self.gearpix)
         self.CenaMain.addItem(self.enginepic)
         self.CenaMain.addItem(self.trainpix)
+        self.CenaMain.addItem(self.furnacepix)
 
         #logic test:
         def MWView (self):
@@ -309,6 +314,8 @@ class MainWindow(QWidget):
             self.engineanim.setPosAt(0.0210, QPointF(-30, 15))
             self.engineanim.setPosAt(0.0225, QPointF(-888, -888))
 
+        #animation9
+
         def Trainn (self):
 
             self.trainanim = QGraphicsItemAnimation(self)
@@ -327,7 +334,27 @@ class MainWindow(QWidget):
             self.trainanim.setPosAt(0.052, QPointF(-320, -200))
             self.trainanim.setPosAt(0.07, QPointF(-500, -200))
             self.trainanim.setPosAt(0.088, QPointF(-770, -200))
-            
+            self.trainanim.setPosAt(0.095, QPointF(-1500, -600))
+
+        #animation10:
+
+        def FurnAn (self):
+
+            self.fornonimation = QGraphicsItemAnimation(self)
+            self.fornonimation.setTimeLine(self.linha)
+            self.fornonimation.setItem(self.furnacepix)
+            self.fornonimation.setPosAt(0.0, QPointF(-800, -600))
+            self.fornonimation.setPosAt(0.095, QPointF(-800, -600))
+            self.fornonimation.setPosAt(0.1, QPointF(100.0, 100.0))
+            self.fornonimation.setScaleAt(0.1, 1.4, 1.4)
+            self.fornonimation.setPosAt(0.125, QPointF(30, 130))
+            self.fornonimation.setScaleAt(0.125, 1.9, 1.9)
+            self.fornonimation.setPosAt(0.150, QPointF(-90, -20))
+            self.fornonimation.setScaleAt(0.150, 2.3, 2.3)
+            self.fornonimation.setPosAt(0.170, QPointF(-90, -20))
+            self.fornonimation.setScaleAt(0.170, 2.3, 2.3)
+            self.fornonimation.setPosAt(0.175, QPointF(-600, -20))
+            self.fornonimation.setPosAt(0.180, QPointF(-980, -20))
 
         #animations finalization: 
            
@@ -340,6 +367,7 @@ class MainWindow(QWidget):
         GearAni(self)
         Pic1Ani(self)
         Trainn(self)
+        FurnAn(self)
         #TimelineCall:
         self.linha.start()
 
