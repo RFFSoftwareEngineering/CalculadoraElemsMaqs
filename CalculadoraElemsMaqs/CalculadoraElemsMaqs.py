@@ -125,6 +125,9 @@ class MainWindow(QWidget):
             self.animenation.setRotationAt(0.085, 0)
             self.animenation.setRotationAt(0.092, -5)
             self.animenation.setRotationAt(0.1, 0)
+            self.animenation.setPosAt(0.12, QPointF(150.0, 520.0))
+            self.animenation.setPosAt(0.14, QPointF(150, 600.0))
+            self.animenation.setPosAt(0.17, QPointF(150, 800))
 
         #animation2:
         
@@ -151,6 +154,9 @@ class MainWindow(QWidget):
             self.animation2.setRotationAt(0.097, -3.0)
             self.animation2.setPosAt(0.098, QPointF(-180.0, 70.0))
             self.animation2.setPosAt(0.10, QPointF(-180.0, 50.0))
+            self.animation2.setPosAt(0.12, QPointF(-140.0, 10.0))
+            self.animation2.setPosAt(0.14, QPointF(-90, -80))
+            self.animation2.setPosAt(0.17, QPointF(-90, -250))
 
 
         #animation3(the hammer):
@@ -176,6 +182,9 @@ class MainWindow(QWidget):
             self.hammerAnim.setRotationAt(0.090, -160.0)
             self.hammerAnim.setRotationAt(0.10, -100.0)
             self.hammerAnim.setPosAt(0.10, QPointF(320.0, 350.0))
+            self.hammerAnim.setPosAt(0.12, QPointF(360.0, 350.0))
+            self.hammerAnim.setPosAt(0.14, QPointF(420.0, 380))
+            self.hammerAnim.setPosAt(0.17, QPointF(580, 380))
 
         #animation4:
 
@@ -197,6 +206,8 @@ class MainWindow(QWidget):
             self.sparkanim.setPosAt(0.0955, QPointF(385.0, 198.0))
             self.sparkanim.setPosAt(0.10, QPointF(385.0, 210.0))
             self.sparkanim.setPosAt(0.10, QPointF(385.0, 200.0))
+            self.sparkanim.setPosAt(0.12, QPointF(410.0, 200.0))
+            self.sparkanim.setPosAt(0.14, QPointF(500.0, 200))
 
         #animation5:
 
@@ -226,6 +237,8 @@ class MainWindow(QWidget):
             self.shipanimation.setPosAt(0.08, QPointF(180, 310))
             self.shipanimation.setPosAt(0.09, QPointF(40, 320))
             self.shipanimation.setPosAt(0.10, QPointF(-120, 320))
+            self.shipanimation.setPosAt(0.12, QPointF(-160, 320))
+            self.shipanimation.setPosAt(0.14, QPointF(-250, 320))
 
         #animation7:
 
@@ -253,6 +266,40 @@ class MainWindow(QWidget):
             self.gearanimation1.setPosAt(0.079, QPointF(320.0, 82.0))
             self.gearanimation1.setRotationAt(0.10, 360)
             self.gearanimation1.setPosAt(0.099, QPointF(305.0, 35.0))
+            self.gearanimation1.setPosAt(0.12, QPointF(305.0, 10.0))
+            self.gearanimation1.setPosAt(0.14, QPointF(305.0, -50))
+
+        #animation8:
+
+        def Pic1Ani (self):
+
+            self.engineanim = QGraphicsItemAnimation(self)
+            self.engineanim.setTimeLine(self.linha)
+            self.engineanim.setItem(self.enginepic)
+            self.engineanim.setPosAt(0.0, QPointF(0.0, 0.0))
+            self.engineanim.setScaleAt(0.0, 0.1, 0.1)
+            self.engineanim.setPosAt(0.12, QPointF(100, 100))
+            self.engineanim.setPosAt(0.14, QPointF(200, 200))
+            self.engineanim.setScaleAt(0.139, 0.1, 0.1)
+            self.engineanim.setScaleAt(0.16, 0.35, 0.35)
+            self.engineanim.setPosAt(0.16, QPointF(260, 260))
+            self.engineanim.setScaleAt(0.17, 0.55, 0.55)
+            self.engineanim.setScaleAt(0.2, 1.2, 1.2)
+            self.engineanim.setPosAt(0.21, QPointF(240, 240))
+            self.engineanim.setScaleAt(0.24, 2.2, 2.2)
+            self.engineanim.setPosAt(0.23, QPointF(180, 180))
+            self.engineanim.setScaleAt(0.27, 4.4, 4.4)
+            self.engineanim.setPosAt(0.27, QPointF(90, 130))
+            self.engineanim.setPosAt(0.28, QPointF(40, 130))
+            self.engineanim.setScaleAt(0.3, 6.2, 6.2)
+            self.engineanim.setPosAt(0.3, QPointF(20, 80))
+            self.engineanim.setScaleAt(0.4, 7.1, 7.1)
+            self.engineanim.setPosAt(0.4, QPointF(0, 20))
+            self.engineanim.setScaleAt(0.45, 8, 8)
+            self.engineanim.setPosAt(0.45, QPointF(-30, 15))
+            self.engineanim.setScaleAt(0.5, 1.2, 1.2)
+            self.engineanim.setPosAt(0.5, QPointF(-80, -15))
+            self.engineanim.setPosAt(0.55, QPointF(-220, -220))
 
         #animations finalization: 
            
@@ -263,6 +310,7 @@ class MainWindow(QWidget):
         PlaneAni(self)
         ShipAni(self)
         GearAni(self)
+        Pic1Ani(self)
         #TimelineCall:
         self.linha.start()
 
