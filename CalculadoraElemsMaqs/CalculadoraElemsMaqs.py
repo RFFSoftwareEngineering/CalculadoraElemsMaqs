@@ -80,6 +80,18 @@ class MainWindow(QWidget):
         self.furnacepix.setFlag(QGraphicsItem.ItemIsMovable)
         self.furnacepix.setScale(0.7)
 
+        self.naviopix = QGraphicsPixmapItem(QPixmap("cargoshippic"))
+        self.naviopix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.naviopix.setScale(0.4)
+
+        self.aviaopix = QGraphicsPixmapItem(QPixmap("planepic"))
+        self.aviaopix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.aviaopix.setScale(0.12)
+
+        self.Titulopix = QGraphicsPixmapItem(QPixmap("tituloELM"))
+        self.Titulopix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.Titulopix.setScale(0.1)
+
 
         self.CenaMain.addItem(self.pixmap1)
         self.CenaMain.addItem(self.pixmap2)
@@ -91,6 +103,9 @@ class MainWindow(QWidget):
         self.CenaMain.addItem(self.enginepic)
         self.CenaMain.addItem(self.trainpix)
         self.CenaMain.addItem(self.furnacepix)
+        self.CenaMain.addItem(self.naviopix)
+        self.CenaMain.addItem(self.aviaopix)
+        self.CenaMain.addItem(self.Titulopix)
 
         #logic test:
         def MWView (self):
@@ -356,6 +371,61 @@ class MainWindow(QWidget):
             self.fornonimation.setPosAt(0.175, QPointF(-600, -20))
             self.fornonimation.setPosAt(0.180, QPointF(-980, -20))
 
+        #animation11:
+
+        def NavioAni (self):
+
+            self.navionimation = QGraphicsItemAnimation(self)
+            self.navionimation.setTimeLine(self.linha)
+            self.navionimation.setItem(self.naviopix)
+            self.navionimation.setPosAt(0.0, QPointF(-800, -600))
+            self.navionimation.setPosAt(0.180, QPointF(-800, -600))
+            self.navionimation.setPosAt(0.185, QPointF(-20.0, -20.0))
+            self.navionimation.setScaleAt(0.186, 1.4, 1.4)
+            self.navionimation.setPosAt(0.2, QPointF(20, 20))
+            self.navionimation.setScaleAt(0.2, 1.9, 1.9)
+            self.navionimation.setPosAt(0.225, QPointF(-20, 20))
+            self.navionimation.setPosAt(0.250, QPointF(-50, 20))
+            self.navionimation.setPosAt(0.275, QPointF(-80, 20))
+            self.navionimation.setPosAt(0.3, QPointF(-110, 20))
+            self.navionimation.setPosAt(0.325, QPointF(-140, 20))
+            self.navionimation.setPosAt(0.350, QPointF(-170, 20))
+            self.navionimation.setPosAt(0.375, QPointF(-200, 20))
+            self.navionimation.setPosAt(0.400, QPointF(-230, 20))
+            self.navionimation.setPosAt(0.410, QPointF(-1200, 20))
+
+        #animation12:
+
+        def AviaoAni (self):
+
+            self.aviaoani = QGraphicsItemAnimation(self)
+            self.aviaoani.setTimeLine(self.linha)
+            self.aviaoani.setItem(self.aviaopix)
+            self.aviaoani.setPosAt(0.0, QPointF(-800, -500))
+            self.aviaoani.setPosAt(0.410, QPointF(-800, -500))
+            self.aviaoani.setPosAt(0.415, QPointF(0, 0))
+            self.aviaoani.setScaleAt(0.445, 1.8, 1.8)
+            self.aviaoani.setPosAt(0.485, QPointF(-200, 0))
+            self.aviaoani.setScaleAt(0.485, 2.4, 2.4)
+            self.aviaoani.setPosAt(0.5, QPointF(-300, 20))
+            self.aviaoani.setScaleAt(0.530, 2.0, 2.0)
+            self.aviaoani.setPosAt(0.560, QPointF(0, 20))
+            self.aviaoani.setPosAt(0.570, QPointF(-1200, 20))
+
+        #animation12:
+
+        def TituloAni (self):
+
+            self.tituloani = QGraphicsItemAnimation(self)
+            self.tituloani.setTimeLine(self.linha)
+            self.tituloani.setItem(self.Titulopix)
+            self.tituloani.setPosAt(0.0, QPointF(800, 0))
+            self.tituloani.setPosAt(0.570, QPointF(800, 0))
+            self.tituloani.setScaleAt(0.575, 9, 9)
+            self.tituloani.setPosAt(0.576, QPointF(650, 0))
+            self.tituloani.setPosAt(0.9, QPointF(-1100, 0))
+            self.tituloani.setPosAt(1, QPointF(-1600, 0))
+
         #animations finalization: 
            
         Anime(self)
@@ -368,6 +438,9 @@ class MainWindow(QWidget):
         Pic1Ani(self)
         Trainn(self)
         FurnAn(self)
+        NavioAni(self)
+        AviaoAni(self)
+        TituloAni(self)
         #TimelineCall:
         self.linha.start()
 
