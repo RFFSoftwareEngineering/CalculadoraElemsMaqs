@@ -32,6 +32,7 @@
     <Content Include="enginewallpaper.jpg" />
     <Content Include="furnace.jpg" />
     <Content Include="gear-icon-vector.png" />
+    <Content Include="ParafusoIcon.png" />
     <Content Include="plane.png" />
     <Content Include="planepic.jpg" />
     <Content Include="sparky.png" />

@@ -449,9 +449,18 @@ class MainWindow(QWidget):
 
     def MainWindowBtns (self):
 
-        self.TesteBtn = QPushButton("test", self)
-        self.TesteBtn.move(800, 200)
-        self.TesteBtn.clicked.connect(self.CreateNewWin)
+        self.GearsBtn = QPushButton("Cálculo de Engrenagens", self)
+        self.GearsBtn.setFont(QFont("Arial", 20, 8, True))
+        self.GearsBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.GearsBtn.setIcon(QIcon("gear-icon-vector"))
+        self.GearsBtn.move(515, 85)
+        self.GearsBtn.clicked.connect(self.CreateNewWin)
+        self.ParafBtn = QPushButton("Cálculo de Parafusos", self)
+        self.ParafBtn.setFont(QFont("Arial", 20, 8, True))
+        self.ParafBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.ParafBtn.setIcon(QIcon("ParafusoIcon"))
+        self.ParafBtn.move(915, 85)
+
 #gears Window:
 
     def CreateNewWin (self):
