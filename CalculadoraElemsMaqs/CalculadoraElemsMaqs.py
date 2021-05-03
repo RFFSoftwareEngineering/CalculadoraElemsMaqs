@@ -488,6 +488,7 @@ class MainWindow(QWidget):
     def WindowInWindow (self):
 
         self.Windowisidewindow = QWidget()
+        self.testLabel()
         self.Windowisidewindow.show()
 
     def TesteSoma (self):
@@ -502,7 +503,9 @@ class MainWindow(QWidget):
         self.ResultadoField.move(75, 80)
         self.ResultadoField.show()
         
-        
+    def testLabel (self):
+
+        self.testeeeee = QLabel("teste", self.Windowisidewindow)
         
 
         

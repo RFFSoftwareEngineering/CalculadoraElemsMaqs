@@ -24,6 +24,7 @@
     <Compile Include="CalculadoraElemsMaqs.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="beaugears.jpg" />
     <Content Include="cargoship.png" />
     <Content Include="cargoshippic.jpg" />
     <Content Include="chave-parafuso.png" />
