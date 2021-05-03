@@ -460,6 +460,16 @@ class MainWindow(QWidget):
         self.ParafBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.ParafBtn.setIcon(QIcon("ParafusoIcon"))
         self.ParafBtn.move(915, 85)
+        self.RebitBtn = QPushButton("Cálculo de Rebites", self)
+        self.RebitBtn.setFont(QFont("Arial", 20, 8 , True))
+        self.RebitBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RebitBtn.setIcon(QIcon("RebiteIcon"))
+        self.RebitBtn.move(525, 150)
+        self.MolasBtn = QPushButton("Cálculo de Molas", self)
+        self.MolasBtn.setFont(QFont("Arial", 20, 8, True))
+        self.MolasBtn.setStyleSheet("color: rgb(17 ,11, 26)")
+        self.MolasBtn.setIcon(QIcon("MolaIcon"))
+        self.MolasBtn.move(915, 150)
 
 #gears Window:
 
