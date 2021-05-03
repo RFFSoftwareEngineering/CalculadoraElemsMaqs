@@ -470,6 +470,21 @@ class MainWindow(QWidget):
         self.MolasBtn.setStyleSheet("color: rgb(17 ,11, 26)")
         self.MolasBtn.setIcon(QIcon("MolaIcon"))
         self.MolasBtn.move(915, 150)
+        self.EixoBtn = QPushButton("Cálculo de Eixos", self)
+        self.EixoBtn.setFont(QFont("Arial", 20, 8, True))
+        self.EixoBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.EixoBtn.setIcon(QIcon("eixoIcon"))
+        self.EixoBtn.move(520, 220)
+        self.SoldaBtn = QPushButton("Cálculo de Solda", self)
+        self.SoldaBtn.setFont(QFont("Arial", 20, 8, True))
+        self.SoldaBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.SoldaBtn.setIcon(QIcon("SoldaIcon"))
+        self.SoldaBtn.move(915, 220)
+        self.PorcasBtn = QPushButton("Cálculo de Porcas", self)
+        self.PorcasBtn.setFont(QFont("Arial", 20, 8, True))
+        self.PorcasBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.PorcasBtn.setIcon(QIcon("PorcasIcon"))
+        self.PorcasBtn.move(520, 290)
 
 #gears Window:
 
