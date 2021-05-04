@@ -35,6 +35,9 @@
     <Content Include="enginewallpaper.jpg" />
     <Content Include="furnace.jpg" />
     <Content Include="gear-icon-vector.png" />
+    <Content Include="gearafter.png" />
+    <Content Include="gearbefore.jpg" />
+    <Content Include="gears1.jpg" />
     <Content Include="mancalIcon.png" />
     <Content Include="MolaIcon.png" />
     <Content Include="ParafusoIcon.png" />
