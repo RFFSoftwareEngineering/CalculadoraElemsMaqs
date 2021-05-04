@@ -34,7 +34,7 @@ class MainWindow(QWidget):
         self.LabelInfo1 = QLabel("Escolha o Elemento:", self)
         self.LabelInfo1.setFont(QFont("Arial", 16, 2, True))
         self.LabelInfo1.setStyleSheet("color: rgb(17, 11, 26)")
-        self.LabelInfo1.move(800, 50)
+        self.LabelInfo1.move(800, 70)
 
 #MainWindow Scene and View
     def MWSceneanView (self):
@@ -453,64 +453,65 @@ class MainWindow(QWidget):
         self.GearsBtn.setFont(QFont("Arial", 20, 8, True))
         self.GearsBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.GearsBtn.setIcon(QIcon("gear-icon-vector"))
-        self.GearsBtn.move(515, 85)
+        self.GearsBtn.move(515, 140)
         self.GearsBtn.clicked.connect(self.CreateNewWin)
         self.ParafBtn = QPushButton("Cálculo de Parafusos", self)
         self.ParafBtn.setFont(QFont("Arial", 20, 8, True))
         self.ParafBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.ParafBtn.setIcon(QIcon("ParafusoIcon"))
-        self.ParafBtn.move(915, 85)
+        self.ParafBtn.move(915, 140)
         self.RebitBtn = QPushButton("Cálculo de Rebites", self)
         self.RebitBtn.setFont(QFont("Arial", 20, 8 , True))
         self.RebitBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.RebitBtn.setIcon(QIcon("RebiteIcon"))
-        self.RebitBtn.move(525, 150)
+        self.RebitBtn.move(525, 240)
         self.MolasBtn = QPushButton("Cálculo de Molas", self)
         self.MolasBtn.setFont(QFont("Arial", 20, 8, True))
         self.MolasBtn.setStyleSheet("color: rgb(17 ,11, 26)")
         self.MolasBtn.setIcon(QIcon("MolaIcon"))
-        self.MolasBtn.move(915, 150)
+        self.MolasBtn.move(915, 240)
         self.EixoBtn = QPushButton("Cálculo de Eixos", self)
         self.EixoBtn.setFont(QFont("Arial", 20, 8, True))
         self.EixoBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.EixoBtn.setIcon(QIcon("eixoIcon"))
-        self.EixoBtn.move(520, 220)
+        self.EixoBtn.move(520, 340)
         self.SoldaBtn = QPushButton("Cálculo de Solda", self)
         self.SoldaBtn.setFont(QFont("Arial", 20, 8, True))
         self.SoldaBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.SoldaBtn.setIcon(QIcon("SoldaIcon"))
-        self.SoldaBtn.move(915, 220)
+        self.SoldaBtn.move(915, 340)
         self.PorcasBtn = QPushButton("Cálculo de Porcas", self)
         self.PorcasBtn.setFont(QFont("Arial", 20, 8, True))
         self.PorcasBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.PorcasBtn.setIcon(QIcon("PorcasIcon"))
-        self.PorcasBtn.move(520, 290)
+        self.PorcasBtn.move(520, 440)
         self.MancaisBtn = QPushButton("Cálculo de Mancais", self)
         self.MancaisBtn.setFont(QFont("Arial", 20, 8, True))
         self.MancaisBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.MancaisBtn.setIcon(QIcon("mancalIcon"))
-        self.MancaisBtn.move(915, 290)
+        self.MancaisBtn.move(915, 440)
         self.CaboBtn = QPushButton("Cálculo de Cabos de Aço", self)
         self.CaboBtn.setFont(QFont("Arial", 20, 8, True))
         self.CaboBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.CaboBtn.setIcon(QIcon("CaboAlma"))
-        self.CaboBtn.move(515, 370)
+        self.CaboBtn.move(515, 540)
         self.ChaveBtn = QPushButton("Cálculo de Chavetas", self)
         self.ChaveBtn.setFont(QFont("Arial", 20, 8, True))
         self.ChaveBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.ChaveBtn.setIcon(QIcon("chavetaIcon"))
-        self.ChaveBtn.move(920, 370)
+        self.ChaveBtn.move(920, 540)
         self.RoscaBtn = QPushButton("Cálculo de Roscas", self)
         self.RoscaBtn.setFont(QFont("Arial", 20, 8, True))
         self.RoscaBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.RoscaBtn.setIcon(QIcon("roscaIcon"))
-        self.RoscaBtn.move(520, 440)
+        self.RoscaBtn.move(720, 640)
+        
 
 #gears Window:
 
     def CreateNewWin (self):
         self.GearsWindow = QWidget()
-        self.GearsWindow.setGeometry(650, 190, 780, 602)
+        self.GearsWindow.setGeometry(150, 150, 1280, 650)
         self.GearsWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.GearsWindow.setWindowTitle("Seção das Engrenagens")
         #space for function calls:
@@ -522,21 +523,22 @@ class MainWindow(QWidget):
     def MWSk (self):
 
         self.LabelT = QLabel("Calculadora de Elementos de Máquinas", self.GearsWindow)
+        self.LabelT.move(600, 0)
 
 #test:
 
     def SomaFields (self):
 
         self.field1 = QLineEdit("teste", self.GearsWindow)
-        self.field1.move(0, 20)
+        self.field1.move(600, 20)
         self.field2 = QLineEdit("teste2", self.GearsWindow)
-        self.field2.move(150, 20)
+        self.field2.move(750, 20)
         self.Calcular = QPushButton("soma", self.GearsWindow)
-        self.Calcular.move(100, 50)
+        self.Calcular.move(600, 50)
         self.Calcular.clicked.connect(self.TesteSoma)
         #test:
         self.Butao = QPushButton("teste3", self.GearsWindow)
-        self.Butao.move(160, 90)
+        self.Butao.move(760, 90)
         self.Butao.clicked.connect(self.WindowInWindow)
 
     def WindowInWindow (self):
