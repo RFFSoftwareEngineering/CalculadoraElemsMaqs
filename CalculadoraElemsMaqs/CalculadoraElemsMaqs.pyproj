@@ -25,20 +25,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="beaugears.jpg" />
+    <Content Include="CaboAlma.png" />
     <Content Include="cargoship.png" />
     <Content Include="cargoshippic.jpg" />
     <Content Include="chave-parafuso.png" />
+    <Content Include="chavetaIcon.png" />
     <Content Include="eixoIcon.png" />
     <Content Include="engine.png" />
     <Content Include="enginewallpaper.jpg" />
     <Content Include="furnace.jpg" />
     <Content Include="gear-icon-vector.png" />
+    <Content Include="mancalIcon.png" />
     <Content Include="MolaIcon.png" />
     <Content Include="ParafusoIcon.png" />
     <Content Include="plane.png" />
     <Content Include="planepic.jpg" />
     <Content Include="PorcasIcon.png" />
     <Content Include="RebiteIcon.png" />
+    <Content Include="roscaIcon.png" />
     <Content Include="SoldaIcon.png" />
     <Content Include="sparky.png" />
     <Content Include="thor-hammer-icon.png" />
