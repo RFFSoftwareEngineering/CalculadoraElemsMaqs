@@ -458,66 +458,79 @@ class MainWindow(QWidget):
         self.GearsBtn.setIconSize(QSize(40, 40))
         self.GearsBtn.move(515, 140)
         self.GearsBtn.clicked.connect(self.CreateNewWin)
+
         self.ParafBtn = QPushButton("Cálculo de Parafusos", self)
         self.ParafBtn.setFont(QFont("Arial", 20, 8, True))
         self.ParafBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.ParafBtn.setIcon(QIcon("ParafusoIcon"))
         self.ParafBtn.setIconSize(QSize(40, 40))
         self.ParafBtn.move(915, 140)
-        self.RebitBtn = QPushButton("Cálculo de Rebites", self)
-        self.RebitBtn.setFont(QFont("Arial", 20, 8 , True))
-        self.RebitBtn.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RebitBtn.setIcon(QIcon("RebiteIcon"))
-        self.RebitBtn.setIconSize(QSize(40, 40))
-        self.RebitBtn.move(525, 240)
+        self.ParafBtn.clicked.connect(self.CreateScrewWindow)
+
+        self.RoscaBtn = QPushButton("Cálculo de Roscas", self)
+        self.RoscaBtn.setFont(QFont("Arial", 20, 8, True))
+        self.RoscaBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RoscaBtn.setIcon(QIcon("roscaIcon"))
+        self.RoscaBtn.setIconSize(QSize(40, 40))
+        self.RoscaBtn.move(525, 240)
+        self.RoscaBtn.clicked.connect(self.CreateRosca)
+
         self.MolasBtn = QPushButton("Cálculo de Molas", self)
         self.MolasBtn.setFont(QFont("Arial", 20, 8, True))
         self.MolasBtn.setStyleSheet("color: rgb(17 ,11, 26)")
         self.MolasBtn.setIcon(QIcon("MolaIcon"))
-        self.MolasBtn.setIconSize(QSize(40, 40))
+        self.MolasBtn.setIconSize(QSize(55, 55))
         self.MolasBtn.move(915, 240)
+        self.MolasBtn.clicked.connect(self.CreateMolaW)
+
         self.EixoBtn = QPushButton("Cálculo de Eixos", self)
         self.EixoBtn.setFont(QFont("Arial", 20, 8, True))
         self.EixoBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.EixoBtn.setIcon(QIcon("eixoIcon"))
         self.EixoBtn.setIconSize(QSize(50, 50))
         self.EixoBtn.move(520, 340)
+        self.EixoBtn.clicked.connect(self.CreateEixo)
+
         self.SoldaBtn = QPushButton("Cálculo de Solda", self)
         self.SoldaBtn.setFont(QFont("Arial", 20, 8, True))
         self.SoldaBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.SoldaBtn.setIcon(QIcon("SoldaIcon"))
-        self.SoldaBtn.setIconSize(QSize(50, 50))
+        self.SoldaBtn.setIconSize(QSize(61, 61))
         self.SoldaBtn.move(915, 340)
+        self.SoldaBtn.clicked.connect(self.CreateSolda)
+
         self.PorcasBtn = QPushButton("Cálculo de Porcas", self)
         self.PorcasBtn.setFont(QFont("Arial", 20, 8, True))
         self.PorcasBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.PorcasBtn.setIcon(QIcon("PorcasIcon"))
         self.PorcasBtn.setIconSize(QSize(40, 40))
         self.PorcasBtn.move(520, 440)
+        self.PorcasBtn.clicked.connect(self.CreatePorcas)
+
         self.MancaisBtn = QPushButton("Cálculo de Mancais", self)
         self.MancaisBtn.setFont(QFont("Arial", 20, 8, True))
         self.MancaisBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.MancaisBtn.setIcon(QIcon("mancalIcon"))
-        self.MancaisBtn.setIconSize(QSize(50, 50))
+        self.MancaisBtn.setIconSize(QSize(61, 61))
         self.MancaisBtn.move(915, 440)
+        self.MancaisBtn.clicked.connect(self.CreateMancais)
+
         self.CaboBtn = QPushButton("Cálculo de Cabos de Aço", self)
         self.CaboBtn.setFont(QFont("Arial", 20, 8, True))
         self.CaboBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.CaboBtn.setIcon(QIcon("CaboAlma"))
         self.CaboBtn.setIconSize(QSize(50, 50))
         self.CaboBtn.move(515, 540)
+        self.CaboBtn.clicked.connect(self.CreateCabo)
+
         self.ChaveBtn = QPushButton("Cálculo de Chavetas", self)
         self.ChaveBtn.setFont(QFont("Arial", 20, 8, True))
         self.ChaveBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.ChaveBtn.setIcon(QIcon("chavetaIcon"))
-        self.ChaveBtn.setIconSize(QSize(40, 40))
+        self.ChaveBtn.setIconSize(QSize(55, 55))
         self.ChaveBtn.move(920, 540)
-        self.RoscaBtn = QPushButton("Cálculo de Roscas", self)
-        self.RoscaBtn.setFont(QFont("Arial", 20, 8, True))
-        self.RoscaBtn.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RoscaBtn.setIcon(QIcon("roscaIcon"))
-        self.RoscaBtn.setIconSize(QSize(40, 40))
-        self.RoscaBtn.move(720, 640)
+        self.ChaveBtn.clicked.connect(self.CreateChave)
+        
         
 
 #gears Window:
@@ -790,12 +803,127 @@ class MainWindow(QWidget):
     def testLabel (self):
 
         self.testeeeee = QLabel("teste", self.Windowisidewindow)
-        
 
-        
-        
+#########################ScrewsWindow########################################
+
+    def CreateScrewWindow (self):
+
+        self.ScrewWindow = QWidget()
+        self.ScrewWindow.setGeometry(150, 150, 1280, 650)
+        self.ScrewWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewWindow.setWindowTitle("Seção dos Parafusos")
+        self.ScrewWindow.setWindowIcon(QIcon("ParafusoIcon"))
+        self.testeeeee2 = QLabel("teste2", self.ScrewWindow)
+        self.ScrewWindow.show()
+
+#########################RoscaWindow########################################
+
+    def CreateRosca (self):
+
+        self.RoscaWindow = QWidget()
+        self.RoscaWindow.setGeometry(150, 150, 1280, 650)
+        self.RoscaWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.RoscaWindow.setWindowTitle("Seção das Roscas")
+        self.RoscaWindow.setWindowIcon(QIcon("roscaIcon"))
+        self.testeeeee2 = QLabel("teste2", self.RoscaWindow)
+        self.RoscaWindow.show()
+
+
+#########################MolaWindow########################################
+
+    def CreateMolaW (self):
+
+        self.molaWindow = QWidget()
+        self.molaWindow.setGeometry(150, 150, 1280, 650)
+        self.molaWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.molaWindow.setWindowTitle("Seção das Molas")
+        self.molaWindow.setWindowIcon(QIcon("MolaIcon"))
+        self.testeeeee2 = QLabel("teste2", self.molaWindow)
+        self.molaWindow.show()
+
+
+#########################PorcasWindow########################################
+
+    def CreatePorcas (self):
+
+        self.PorcasWindow = QWidget()
+        self.PorcasWindow.setGeometry(150, 150, 1280, 650)
+        self.PorcasWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.PorcasWindow.setWindowTitle("Seção das Porcas")
+        self.PorcasWindow.setWindowIcon(QIcon("PorcasIcon"))
+        self.testeeeee2 = QLabel("teste2", self.PorcasWindow)
+        self.PorcasWindow.show()
+
+
+#########################EixoWindow########################################
+
+    def CreateEixo (self):
+
+        self.EixoWindow = QWidget()
+        self.EixoWindow.setGeometry(150, 150, 1280, 650)
+        self.EixoWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.EixoWindow.setWindowTitle("Seção dos Eixos")
+        self.EixoWindow.setWindowIcon(QIcon("roscaIcon"))
+        self.testeeeee2 = QLabel("teste2", self.EixoWindow)
+        self.EixoWindow.show()
+
+
+#########################ChaveWindow########################################
+
+    def CreateChave (self):
+
+        self.ChaveWindow = QWidget()
+        self.ChaveWindow.setGeometry(150, 150, 1280, 650)
+        self.ChaveWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ChaveWindow.setWindowTitle("Seção das Chavetas")
+        self.ChaveWindow.setWindowIcon(QIcon("chavetaIcon"))
+        self.testeeeee2 = QLabel("teste2", self.ChaveWindow)
+        self.ChaveWindow.show()
+
+
+#########################SoldaWindow########################################
+
+    def CreateSolda (self):
+
+        self.SoldaWindow = QWidget()
+        self.SoldaWindow.setGeometry(150, 150, 1280, 650)
+        self.SoldaWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.SoldaWindow.setWindowTitle("Seção da Solda")
+        self.SoldaWindow.setWindowIcon(QIcon("SoldaIcon"))
+        self.testeeeee2 = QLabel("teste2", self.SoldaWindow)
+        self.SoldaWindow.show()
+
+
+#########################MancaisWindow########################################
+
+    def CreateMancais (self):
+
+        self.MancaisWindow = QWidget()
+        self.MancaisWindow.setGeometry(150, 150, 1280, 650)
+        self.MancaisWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.MancaisWindow.setWindowTitle("Seção dos Macais")
+        self.MancaisWindow.setWindowIcon(QIcon("mancalIcon"))
+        self.testeeeee2 = QLabel("teste2", self.MancaisWindow)
+        self.MancaisWindow.show()
+
+
+#########################CaboWindow########################################
+
+    def CreateCabo (self):
+
+        self.CaboWindow = QWidget()
+        self.CaboWindow.setGeometry(150, 150, 1280, 650)
+        self.CaboWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.CaboWindow.setWindowTitle("Seção dos Cabos")
+        self.CaboWindow.setWindowIcon(QIcon("CaboAlma"))
+        self.testeeeee2 = QLabel("teste2", self.CaboWindow)
+        self.CaboWindow.show()
+
+
+
  
 ############################Ending###########################################
+
 
 if __name__ == "__main__":
     app = QApplication([])
