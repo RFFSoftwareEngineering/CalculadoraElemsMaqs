@@ -23,7 +23,7 @@ class MainWindow(QWidget):
         self.show()
 
 
-#########################################################################testegit
+#########################################################################testegitiniciando coding
 #MainWindow:
     def MWSkeleton (self):
 
