@@ -38,6 +38,11 @@
     <Content Include="gearafter.png" />
     <Content Include="gearbefore.jpg" />
     <Content Include="gears1.jpg" />
+    <Content Include="gears2.png" />
+    <Content Include="gears3.jpg" />
+    <Content Include="gears4.jpg" />
+    <Content Include="gears5.jpg" />
+    <Content Include="gears6.png" />
     <Content Include="mancalIcon.png" />
     <Content Include="MolaIcon.png" />
     <Content Include="ParafusoIcon.png" />

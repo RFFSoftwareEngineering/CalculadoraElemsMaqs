@@ -557,11 +557,36 @@ class MainWindow(QWidget):
         self.g5pix.setFlag(QGraphicsItem.ItemIsMovable)
         self.g5pix.setScale(0.3)
 
+        self.gear2pix = QGraphicsPixmapItem(QPixmap("gears2"))
+        self.gear2pix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.gear2pix.setScale(0.3)
+
+        self.gears3pix = QGraphicsPixmapItem(QPixmap("gears3"))
+        self.gears3pix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.gears3pix.setScale(0.0)
+
+        self.g4pix = QGraphicsPixmapItem(QPixmap("gears4"))
+        self.g4pix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.g4pix.setScale(0.5)
+
+        self.grwpix = QGraphicsPixmapItem(QPixmap("gears5"))
+        self.grwpix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.grwpix.setScale(0.1)
+
+        self.g6pix = QGraphicsPixmapItem(QPixmap("gears6"))
+        self.g6pix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.g6pix.setScale(0.25)
+
         #pix add:
         self.SceneGears.addItem(self.GPix1)
         self.SceneGears.addItem(self.G2Pix)
         self.SceneGears.addItem(self.g3Pix)
         self.SceneGears.addItem(self.g5pix)
+        self.SceneGears.addItem(self.gear2pix)
+        self.SceneGears.addItem(self.gears3pix)
+        self.SceneGears.addItem(self.g4pix)
+        self.SceneGears.addItem(self.grwpix)
+        self.SceneGears.addItem(self.g6pix)
 
         def GearsWinView(self):
             self.GearsView = QGraphicsView(self.SceneGears, self.GearsWindow)
@@ -577,7 +602,7 @@ class MainWindow(QWidget):
 
         self.lineGears = QTimeLine(70000, self.GearsWindow)
         self.lineGears.setFrameRange(0, 20000)
-        self.lineGears.setLoopCount(0)
+        self.lineGears.setLoopCount(2)
 
         def GearsTimerfunc(self):
             self.Geartimer = QTimer()
@@ -630,7 +655,7 @@ class MainWindow(QWidget):
             self.g3anim.setScaleAt(0.015, 3.0, 3.0)
             self.g3anim.setPosAt(0.02, QPointF(0.0, 0.0))
             self.g3anim.setPosAt(0.043, QPointF(-350.0, 0.0))
-            self.g3anim.setPosAt(0.094,QPointF(-1200, 0))
+            self.g3anim.setPosAt(0.094,QPointF(-1450, 0))
 
         #ani4:
 
@@ -648,12 +673,83 @@ class MainWindow(QWidget):
             self.g4ani.setPosAt(0.095, QPointF(-50.0, -10.0))
             self.g4ani.setPosAt(0.110, QPointF(-300, -10.0))
             self.g4ani.setPosAt(0.130, QPointF(-700.0, -10.0))
+            self.g4ani.setPosAt(0.175, QPointF(-1600.0, -10.0))
+
+        def gears5Ani (self):
+
+            self.g5ani = QGraphicsItemAnimation(self.GearsWindow)
+            self.g5ani.setTimeLine(self.lineGears)
+            self.g5ani.setItem(self.gear2pix)
+            self.g5ani.setPosAt(0.0, QPointF(800, 200))
+            self.g5ani.setPosAt(0.110, QPointF(800, 200))
+            self.g5ani.setPosAt(0.121, QPointF(0, 0))
+            self.g5ani.setScaleAt(0.150, 1.6, 1.6)
+            self.g5ani.setScaleAt(0.170, 3.6, 3.6)
+            self.g5ani.setPosAt(0.171, QPointF(0, 0))
+            self.g5ani.setPosAt(0.210, QPointF(-350, 0))
+            self.g5ani.setPosAt(0.250, QPointF(-1200.0, 0))
+
+        def gears6Ani (self):
+
+            self.g6ani = QGraphicsItemAnimation(self.GearsWindow)
+            self.g6ani.setTimeLine(self.lineGears)
+            self.g6ani.setItem(self.gears3pix)
+            self.g6ani.setPosAt(0.0, QPointF(800, 200))
+            self.g6ani.setPosAt(0.248, QPointF(800.0, 200.0))
+            self.g6ani.setPosAt(0.255, QPointF(0.0, 0.0))
+            self.g6ani.setScaleAt(0.275, 2.2, 2.2)
+            self.g6ani.setPosAt(0.32, QPointF(-300.0, 0.0))
+            self.g6ani.setPosAt(0.45, QPointF(-1800.0, 0.0))
+
+        def g7Ani (self):
+
+            self.g7ani = QGraphicsItemAnimation(self.GearsWindow)
+            self.g7ani.setTimeLine(self.lineGears)
+            self.g7ani.setItem(self.g4pix)
+            self.g7ani.setPosAt(0.0, QPointF(1200.0, 800))
+            self.g7ani.setPosAt(0.28, QPointF(0.0, 0.0))
+            self.g7ani.setScaleAt(0.30, 1.8, 1.8)
+            self.g7ani.setPosAt(0.30, QPointF(0.0, 0.0))
+            self.g7ani.setScaleAt(0.32, 2.5, 2.5)
+            self.g7ani.setPosAt(0.37, QPointF(-420, -10))
+            self.g7ani.setPosAt(0.41, QPointF(-1200, -10))
+
+        def g8Ani (self):
+
+            self.g8Ani = QGraphicsItemAnimation(self.GearsWindow)
+            self.g8Ani.setTimeLine(self.lineGears)
+            self.g8Ani.setItem(self.grwpix)
+            self.g8Ani.setPosAt(0.0, QPointF(800.0, -350.0))
+            self.g8Ani.setPosAt(0.35, QPointF(800.0, -350.0))
+            self.g8Ani.setPosAt(0.38, QPointF(0.0, 0.0))
+            self.g8Ani.setScaleAt(0.38, 2.0, 2.0)
+            self.g8Ani.setScaleAt(0.4, 4.0, 4.0)
+            self.g8Ani.setPosAt(0.45, QPointF(-450.0, 0.0))
+            self.g8Ani.setPosAt(0.5, QPointF(-900.0, 0.0))
+            self.g8Ani.setPosAt(0.55, QPointF(-1350.0, 0.0))
+
+        def g9ani (self):
+
+            self.g9ani = QGraphicsItemAnimation(self.GearsWindow)
+            self.g9ani.setTimeLine(self.lineGears)
+            self.g9ani.setItem(self.g6pix)
+            self.g9ani.setPosAt(0.0, QPointF(800, -200))
+            self.g9ani.setPosAt(0.55, QPointF(800, -200))
+            self.g9ani.setPosAt(0.56, QPointF(0.0, 0.0))
+            self.g9ani.setScaleAt(0.6, 3.5, 3.5)
+            self.g9ani.setPosAt(0.8, QPointF(-250.0, -250.0))
+            self.g9ani.setPosAt(0.98, QPointF(-650, -300.0))
 
         #animations finalization:
         GAnime1(self)
         GA2nime(self)
         G3Ani(self)
         G4Ani(self)
+        gears5Ani(self)
+        gears6Ani(self)
+        g7Ani(self)
+        g8Ani(self)
+        g9ani(self)
         self.lineGears.start()
 
 
