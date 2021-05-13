@@ -23,7 +23,7 @@ class MainWindow(QWidget):
         self.show()
 
 
-#########################################################################testegitiniciando coding
+#########################################################################
 #MainWindow:
     def MWSkeleton (self):
 
@@ -122,7 +122,7 @@ class MainWindow(QWidget):
 
         self.linha = QTimeLine(70000)
         self.linha.setFrameRange(0, 20000)
-        self.linha.setLoopCount(0)
+        self.linha.setLoopCount(3)
 
         def reloginho (self):
 
@@ -328,6 +328,8 @@ class MainWindow(QWidget):
             self.engineanim.setScaleAt(0.0210, 8, 8)
             self.engineanim.setPosAt(0.0210, QPointF(-30, 15))
             self.engineanim.setPosAt(0.0225, QPointF(-888, -888))
+            self.engineanim.setPosAt(0.77, QPointF(-888, -888))
+            self.engineanim.setPosAt(0.79, QPointF(-38, 22))
 
         #animation9
 
@@ -423,8 +425,8 @@ class MainWindow(QWidget):
             self.tituloani.setPosAt(0.570, QPointF(800, 0))
             self.tituloani.setScaleAt(0.575, 9, 9)
             self.tituloani.setPosAt(0.576, QPointF(650, 0))
-            self.tituloani.setPosAt(0.9, QPointF(-1100, 0))
-            self.tituloani.setPosAt(1, QPointF(-1600, 0))
+            self.tituloani.setPosAt(0.77, QPointF(-1100, 0))
+            self.tituloani.setPosAt(0.85, QPointF(-2000, 0))
 
         #animations finalization: 
            
@@ -452,58 +454,69 @@ class MainWindow(QWidget):
         self.GearsBtn = QPushButton("Cálculo de Engrenagens", self)
         self.GearsBtn.setFont(QFont("Arial", 20, 8, True))
         self.GearsBtn.setStyleSheet("color: rgb(17, 11, 26)")
-        self.GearsBtn.setIcon(QIcon("gear-icon-vector"))
+        self.GearsBtn.setIcon(QIcon("gear-icon-vector"))  
+        self.GearsBtn.setIconSize(QSize(40, 40))
         self.GearsBtn.move(515, 140)
         self.GearsBtn.clicked.connect(self.CreateNewWin)
         self.ParafBtn = QPushButton("Cálculo de Parafusos", self)
         self.ParafBtn.setFont(QFont("Arial", 20, 8, True))
         self.ParafBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.ParafBtn.setIcon(QIcon("ParafusoIcon"))
+        self.ParafBtn.setIconSize(QSize(40, 40))
         self.ParafBtn.move(915, 140)
         self.RebitBtn = QPushButton("Cálculo de Rebites", self)
         self.RebitBtn.setFont(QFont("Arial", 20, 8 , True))
         self.RebitBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.RebitBtn.setIcon(QIcon("RebiteIcon"))
+        self.RebitBtn.setIconSize(QSize(40, 40))
         self.RebitBtn.move(525, 240)
         self.MolasBtn = QPushButton("Cálculo de Molas", self)
         self.MolasBtn.setFont(QFont("Arial", 20, 8, True))
         self.MolasBtn.setStyleSheet("color: rgb(17 ,11, 26)")
         self.MolasBtn.setIcon(QIcon("MolaIcon"))
+        self.MolasBtn.setIconSize(QSize(40, 40))
         self.MolasBtn.move(915, 240)
         self.EixoBtn = QPushButton("Cálculo de Eixos", self)
         self.EixoBtn.setFont(QFont("Arial", 20, 8, True))
         self.EixoBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.EixoBtn.setIcon(QIcon("eixoIcon"))
+        self.EixoBtn.setIconSize(QSize(50, 50))
         self.EixoBtn.move(520, 340)
         self.SoldaBtn = QPushButton("Cálculo de Solda", self)
         self.SoldaBtn.setFont(QFont("Arial", 20, 8, True))
         self.SoldaBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.SoldaBtn.setIcon(QIcon("SoldaIcon"))
+        self.SoldaBtn.setIconSize(QSize(50, 50))
         self.SoldaBtn.move(915, 340)
         self.PorcasBtn = QPushButton("Cálculo de Porcas", self)
         self.PorcasBtn.setFont(QFont("Arial", 20, 8, True))
         self.PorcasBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.PorcasBtn.setIcon(QIcon("PorcasIcon"))
+        self.PorcasBtn.setIconSize(QSize(40, 40))
         self.PorcasBtn.move(520, 440)
         self.MancaisBtn = QPushButton("Cálculo de Mancais", self)
         self.MancaisBtn.setFont(QFont("Arial", 20, 8, True))
         self.MancaisBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.MancaisBtn.setIcon(QIcon("mancalIcon"))
+        self.MancaisBtn.setIconSize(QSize(50, 50))
         self.MancaisBtn.move(915, 440)
         self.CaboBtn = QPushButton("Cálculo de Cabos de Aço", self)
         self.CaboBtn.setFont(QFont("Arial", 20, 8, True))
         self.CaboBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.CaboBtn.setIcon(QIcon("CaboAlma"))
+        self.CaboBtn.setIconSize(QSize(50, 50))
         self.CaboBtn.move(515, 540)
         self.ChaveBtn = QPushButton("Cálculo de Chavetas", self)
         self.ChaveBtn.setFont(QFont("Arial", 20, 8, True))
         self.ChaveBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.ChaveBtn.setIcon(QIcon("chavetaIcon"))
+        self.ChaveBtn.setIconSize(QSize(40, 40))
         self.ChaveBtn.move(920, 540)
         self.RoscaBtn = QPushButton("Cálculo de Roscas", self)
         self.RoscaBtn.setFont(QFont("Arial", 20, 8, True))
         self.RoscaBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.RoscaBtn.setIcon(QIcon("roscaIcon"))
+        self.RoscaBtn.setIconSize(QSize(40, 40))
         self.RoscaBtn.move(720, 640)
         
 
