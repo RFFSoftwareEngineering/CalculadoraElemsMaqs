@@ -814,7 +814,120 @@ class MainWindow(QWidget):
         self.ScrewWindow.setWindowTitle("Seção dos Parafusos")
         self.ScrewWindow.setWindowIcon(QIcon("ParafusoIcon"))
         self.testeeeee2 = QLabel("teste2", self.ScrewWindow)
+        #space for function calls
+        self.ScrewSceneandView()
+        self.ScrewLine()
+
         self.ScrewWindow.show()
+
+    def ScrewSceneandView (self):
+
+        self.ParafScene = QGraphicsScene(self.ScrewWindow)
+        #pixmap prep
+        self.Ppix1 = QGraphicsPixmapItem(QPixmap("screwhist1"))
+        self.Ppix1.setFlag(QGraphicsItem.ItemIsMovable)
+        self.Ppix1.setScale(0.5)
+
+        self.PPix2 = QGraphicsPixmapItem(QPixmap("screwhist2"))
+        self.PPix2.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix2.setScale(0.3)
+
+        self.PPix3 = QGraphicsPixmapItem(QPixmap("screwhist3"))
+        self.PPix3.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix3.setScale(0.3)
+
+        self.PPix4 = QGraphicsPixmapItem(QPixmap("screwhist4"))
+        self.PPix4.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix4.setScale(0.3)
+
+        self.PPIx5 = QGraphicsPixmapItem(QPixmap("screwhist5"))
+        self.PPIx5.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPIx5.setScale(0.3)
+
+        #pix add
+        self.ParafScene.addItem(self.Ppix1)
+        self.ParafScene.addItem(self.PPix2)
+        self.ParafScene.addItem(self.PPix3)
+        self.ParafScene.addItem(self.PPix4)
+        self.ParafScene.addItem(self.PPIx5)
+
+        #view def
+        def ScrewWindowView (self):
+
+            ParafView = QGraphicsView(self.ParafScene, self.ScrewWindow)
+            ParafView.setGeometry(0, 0, 500, 650)
+
+        ScrewWindowView(self)
+
+#def timeline and timer:
+
+    def ScrewLine (self):
+
+        self.linhaparaf = QTimeLine(70000, self.ScrewWindow)
+        self.linhaparaf.setFrameRange(0, 20000)
+        self.linhaparaf.setLoopCount(0)
+        def ScrewTimer (self):
+            self.parafusotimer = QTimer()
+            self.parafusotimer.isSingleShot()
+        ScrewTimer(self)
+        #def animations:
+        #ani1:
+
+        def SAnim1 (self):
+
+            self.sani1 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani1.setTimeLine(self.linhaparaf)
+            self.sani1.setItem(self.Ppix1)
+            self.sani1.setPosAt(0.0, QPointF(32.0, 0.0))
+            self.sani1.setPosAt(0.02, QPointF(-750, 0.0))
+
+        def SAnim2 (self):
+
+            self.sani2 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani2.setTimeLine(self.linhaparaf)
+            self.sani2.setItem(self.PPix2)
+            self.sani2.setPosAt(0.0, QPointF(1000.0, 0.0))
+            self.sani2.setScaleAt(0.0155, 2.1, 2.1)
+            self.sani2.setPosAt(0.02, QPointF(0.0, 0.0))
+            self.sani2.setPosAt(0.04, QPointF(-1000.0, 0.0))
+
+        def SAnim3 (self):
+
+            self.sani3 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani3.setTimeLine(self.linhaparaf)
+            self.sani3.setItem(self.PPix3)
+            self.sani3.setPosAt(0.0, QPointF(1500.0, 0.0))
+            self.sani3.setScaleAt(0.025, 2.5, 2.5)
+            self.sani3.setPosAt(0.04, QPointF(0.0, 0.0))
+            self.sani3.setPosAt(0.06, QPointF(-1100.0, 0.0))
+
+        def SAnim4 (self):
+
+            self.sani4 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani4.setTimeLine(self.linhaparaf)
+            self.sani4.setItem(self.PPix4)
+            self.sani4.setPosAt(0.0, QPointF(1500.0, 0.0))
+            self.sani4.setScaleAt(0.035, 3.0, 3.0)
+            self.sani4.setPosAt(0.065, QPointF(200.0, 0.0))
+            self.sani4.setPosAt(0.095, QPointF(-1300.0, 0.0))
+
+        def SAnim5 (self):
+
+            self.sani5 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani5.setTimeLine(self.linhaparaf)
+            self.sani5.setItem(self.PPIx5)
+            self.sani5.setPosAt(0.0, QPointF(1500.0, 0.0))
+            self.sani5.setScaleAt(0.07, 2.8, 2.8)
+            
+
+        #animations finalization:
+        SAnim1(self)
+        SAnim2(self)
+        SAnim3(self)
+        SAnim4(self)
+        SAnim5(self)
+        self.linhaparaf.start()
+
 
 #########################RoscaWindow########################################
 
@@ -826,7 +939,25 @@ class MainWindow(QWidget):
         self.RoscaWindow.setWindowTitle("Seção das Roscas")
         self.RoscaWindow.setWindowIcon(QIcon("roscaIcon"))
         self.testeeeee2 = QLabel("teste2", self.RoscaWindow)
+        #space for function calls
+        self.RoscaSceneandView()
+
         self.RoscaWindow.show()
+
+    def RoscaSceneandView (self):
+
+        self.RScene = QGraphicsScene(self.RoscaWindow)
+        #pixmap prep
+
+        #pix add
+
+        #view def
+        def RScanVi (self):
+
+            self.RView = QGraphicsView(self.RScene, self.RoscaWindow)
+            self.RView.setGeometry(0, 0, 500, 650)
+
+        RScanVi(self)
 
 
 #########################MolaWindow########################################
@@ -839,7 +970,25 @@ class MainWindow(QWidget):
         self.molaWindow.setWindowTitle("Seção das Molas")
         self.molaWindow.setWindowIcon(QIcon("MolaIcon"))
         self.testeeeee2 = QLabel("teste2", self.molaWindow)
+        #space for function calls
+        self.MoSceneandView()
+
         self.molaWindow.show()
+
+    def MoSceneandView (self):
+
+        self.MolaScene = QGraphicsScene(self.molaWindow)
+        #pixmap prep
+
+        #pix add
+
+        #view def
+        def MolView (self):
+
+            MolaView = QGraphicsView(self.MolaScene, self.molaWindow)
+            MolaView.setGeometry(0, 0, 500, 650)
+
+        MolView(self)
 
 
 #########################PorcasWindow########################################
@@ -852,7 +1001,25 @@ class MainWindow(QWidget):
         self.PorcasWindow.setWindowTitle("Seção das Porcas")
         self.PorcasWindow.setWindowIcon(QIcon("PorcasIcon"))
         self.testeeeee2 = QLabel("teste2", self.PorcasWindow)
+        #space for function calls
+        self.PorScanView()
+
         self.PorcasWindow.show()
+
+    def PorScanView (self):
+
+        self.Porscene = QGraphicsScene(self.PorcasWindow)
+        #pixmap prep
+
+        #pix add
+
+        #view def
+        def PorcView (self):
+
+            self.PorcaViewVar = QGraphicsView(self.Porscene, self.PorcasWindow)
+            self.PorcaViewVar.setGeometry(0, 0, 500, 650)
+
+        PorcView(self)
 
 
 #########################EixoWindow########################################
@@ -865,7 +1032,25 @@ class MainWindow(QWidget):
         self.EixoWindow.setWindowTitle("Seção dos Eixos")
         self.EixoWindow.setWindowIcon(QIcon("roscaIcon"))
         self.testeeeee2 = QLabel("teste2", self.EixoWindow)
+        #space for function calls
+        self.EixoSceneandView()
+
         self.EixoWindow.show()
+
+    def EixoSceneandView (self):
+
+        self.EixoScene = QGraphicsScene(self.EixoWindow)
+        #pixmap prep
+
+        #pix add
+
+        #view def
+        def EixoViewf (self):
+
+            self.EixoView = QGraphicsView(self.EixoScene, self.EixoWindow)
+            self.EixoView.setGeometry(0, 0, 500, 650)
+
+        EixoViewf(self)
 
 
 #########################ChaveWindow########################################
@@ -878,6 +1063,8 @@ class MainWindow(QWidget):
         self.ChaveWindow.setWindowTitle("Seção das Chavetas")
         self.ChaveWindow.setWindowIcon(QIcon("chavetaIcon"))
         self.testeeeee2 = QLabel("teste2", self.ChaveWindow)
+        #space for function calls
+
         self.ChaveWindow.show()
 
 
@@ -891,6 +1078,8 @@ class MainWindow(QWidget):
         self.SoldaWindow.setWindowTitle("Seção da Solda")
         self.SoldaWindow.setWindowIcon(QIcon("SoldaIcon"))
         self.testeeeee2 = QLabel("teste2", self.SoldaWindow)
+        #space for function calls
+
         self.SoldaWindow.show()
 
 
@@ -904,6 +1093,8 @@ class MainWindow(QWidget):
         self.MancaisWindow.setWindowTitle("Seção dos Macais")
         self.MancaisWindow.setWindowIcon(QIcon("mancalIcon"))
         self.testeeeee2 = QLabel("teste2", self.MancaisWindow)
+        #space for function calls
+
         self.MancaisWindow.show()
 
 
@@ -917,6 +1108,8 @@ class MainWindow(QWidget):
         self.CaboWindow.setWindowTitle("Seção dos Cabos")
         self.CaboWindow.setWindowIcon(QIcon("CaboAlma"))
         self.testeeeee2 = QLabel("teste2", self.CaboWindow)
+        #space for function calls
+
         self.CaboWindow.show()
 
 
