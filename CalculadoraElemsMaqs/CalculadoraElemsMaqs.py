@@ -857,6 +857,26 @@ class MainWindow(QWidget):
         self.PPix8.setFlag(QGraphicsItem.ItemIsMovable)
         self.PPix8.setScale(0.3)
 
+        self.PPix9 = QGraphicsPixmapItem(QPixmap("screwhist9"))
+        self.PPix9.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix9.setScale(0.35)
+
+        self.PPix10 = QGraphicsPixmapItem(QPixmap("screwhist10"))
+        self.PPix10.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix10.setScale(0.4)
+
+        self.PPix11 = QGraphicsPixmapItem(QPixmap("screwhist11"))
+        self.PPix11.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix11.setScale(0.4)
+
+        self.PPix12 = QGraphicsPixmapItem(QPixmap("screwhist12"))
+        self.PPix12.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix12.setScale(0.4)
+
+        self.PPix13 = QGraphicsPixmapItem(QPixmap("screwhist13"))
+        self.PPix13.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix13.setScale(0.4)
+
 
 
         #pix add
@@ -868,6 +888,11 @@ class MainWindow(QWidget):
         self.ParafScene.addItem(self.PPix6)
         self.ParafScene.addItem(self.PPix7)
         self.ParafScene.addItem(self.PPix8)
+        self.ParafScene.addItem(self.PPix9)
+        self.ParafScene.addItem(self.PPix10)
+        self.ParafScene.addItem(self.PPix11)
+        self.ParafScene.addItem(self.PPix12)
+        self.ParafScene.addItem(self.PPix13)
 
 
         #view def
@@ -976,6 +1001,69 @@ class MainWindow(QWidget):
             self.sani8.setPosAt(0.365, QPointF(100.0, 0.0))
             self.sani8.setPosAt(0.49, QPointF(-1400.0, 0.0))
 
+        def ScrAni9 (self):
+
+            self.sani9 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani9.setTimeLine(self.linhaparaf)
+            self.sani9.setItem(self.PPix9)
+            self.sani9.setPosAt(0.0, QPointF(1500.0, 0.0))
+            self.sani9.setScaleAt(0.35, 1.0, 1.0)
+            self.sani9.setPosAt(0.3, QPointF(1200.0, 0.0))
+            self.sani9.setScaleAt(0.36, 2.1, 2.1)
+            self.sani9.setPosAt(0.50, QPointF(100.0, 0.0))
+            self.sani9.setPosAt(0.59, QPointF(-1400.0, 0.0))
+
+        def ScrAni10 (self):
+
+            self.sani10 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani10.setTimeLine(self.linhaparaf)
+            self.sani10.setItem(self.PPix10)
+            self.sani10.setPosAt(0.0, QPointF(1500.0, 0.0))
+            self.sani10.setScaleAt(0.4, 1.0, 1.0)
+            self.sani10.setPosAt(0.49, QPointF(1200.0, 0.0))
+            self.sani10.setScaleAt(0.49, 2.1, 2.1)
+            self.sani10.setPosAt(0.59, QPointF(100.0, 0.0))
+            self.sani10.setPosAt(0.63, QPointF(-300.0, 0.0))
+            self.sani10.setPosAt(0.69, QPointF(-1250.0, 0.0))
+
+        def ScrAni11 (self):
+
+            self.sani11 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani11.setTimeLine(self.linhaparaf)
+            self.sani11.setItem(self.PPix11)
+            self.sani11.setPosAt(0.0, QPointF(1500.0, 0.0))
+            self.sani11.setScaleAt(0.5, 1.0, 1.0)
+            self.sani11.setPosAt(0.5, QPointF(1500.0, 0.0))
+            self.sani11.setScaleAt(0.59, 2.1, 2.1)
+            self.sani11.setPosAt(0.68, QPointF(1500.0, 0.0))
+            self.sani11.setPosAt(0.69, QPointF(100.0, 0.0))
+            self.sani11.setPosAt(0.73, QPointF(-300.0, 0.0))
+            self.sani11.setPosAt(0.79, QPointF(-1250.0, 0.0))
+
+        def ScrAni12 (self):
+
+            self.sani12 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani12.setTimeLine(self.linhaparaf)
+            self.sani12.setItem(self.PPix12)
+            self.sani12.setPosAt(0.0, QPointF(1500.0, 0.0))
+            self.sani12.setScaleAt(0.63, 2.4, 2.4)
+            self.sani12.setPosAt(0.73, QPointF(1500.0, 0.0))
+            self.sani12.setPosAt(0.79, QPointF(100.0, 0.0))
+            self.sani12.setPosAt(0.86, QPointF(-1450.0, 0.0))
+
+        def ScrFinal (self):
+
+            self.sani13 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani13.setTimeLine(self.linhaparaf)
+            self.sani13.setItem(self.PPix13)
+            self.sani13.setPosAt(0.0, QPointF(1500.0 , 0.0))
+            self.sani13.setPosAt(0.86, QPointF(1500.0, 0.0))
+            self.sani13.setScaleAt(0.83, 2.5, 2.5)
+            self.sani13.setPosAt(0.87, QPointF(-100.0, 0.0))
+            self.sani13.setPosAt(0.91, QPointF(-490.0, 0.0))
+            self.sani13.setPosAt(0.95, QPointF(-550.0, 0.0))
+            self.sani13.setPosAt(1.0, QPointF(-1200.0, 0.0))
+
 
         #animations finalization:
         SAnim1(self)
@@ -986,6 +1074,11 @@ class MainWindow(QWidget):
         SAnim6(self)
         ScrewAnim7(self)
         ScrAni8(self)
+        ScrAni9(self)
+        ScrAni10(self)
+        ScrAni11(self)
+        ScrAni12(self)
+        ScrFinal(self)
         self.linhaparaf.start()
 
 
