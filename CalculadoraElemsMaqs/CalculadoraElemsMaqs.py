@@ -844,12 +844,31 @@ class MainWindow(QWidget):
         self.PPIx5.setFlag(QGraphicsItem.ItemIsMovable)
         self.PPIx5.setScale(0.3)
 
+        self.PPix6 = QGraphicsPixmapItem(QPixmap("screwhist6"))
+        self.PPix6.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix6.setScale(0.4)
+
+        self.PPix7 = QGraphicsPixmapItem(QPixmap("screwhist7"))
+        self.PPix7.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix7.setScale(0.4)
+        
+
+        self.PPix8 = QGraphicsPixmapItem(QPixmap("screwhist8"))
+        self.PPix8.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PPix8.setScale(0.3)
+
+
+
         #pix add
         self.ParafScene.addItem(self.Ppix1)
         self.ParafScene.addItem(self.PPix2)
         self.ParafScene.addItem(self.PPix3)
         self.ParafScene.addItem(self.PPix4)
         self.ParafScene.addItem(self.PPIx5)
+        self.ParafScene.addItem(self.PPix6)
+        self.ParafScene.addItem(self.PPix7)
+        self.ParafScene.addItem(self.PPix8)
+
 
         #view def
         def ScrewWindowView (self):
@@ -918,7 +937,45 @@ class MainWindow(QWidget):
             self.sani5.setItem(self.PPIx5)
             self.sani5.setPosAt(0.0, QPointF(1500.0, 0.0))
             self.sani5.setScaleAt(0.07, 2.8, 2.8)
-            
+            self.sani5.setPosAt(0.099, QPointF(500.0, 0.0))
+            self.sani5.setPosAt(0.15, QPointF(-500.0, 0.0))
+            self.sani5.setPosAt(0.2, QPointF(-1800.0, 0.0))
+
+        def SAnim6 (self):
+
+            self.sani6 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani6.setTimeLine(self.linhaparaf)
+            self.sani6.setItem(self.PPix6)
+            self.sani6.setPosAt(0.0, QPointF(1000.0, 0.0))
+            self.sani6.setPosAt(0.14, QPointF(850.0, 0.0))
+            self.sani6.setScaleAt(0.145, 2.1, 2.1)
+            self.sani6.setPosAt(0.2, QPointF(0.0, 0.0))
+            self.sani6.setPosAt(0.23, QPointF(-100.0, 0.0))
+            self.sani6.setPosAt(0.28, QPointF(-1500.0, 0.0))
+
+        def ScrewAnim7 (self):
+
+            self.sani7 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani7.setTimeLine(self.linhaparaf)
+            self.sani7.setItem(self.PPix7)
+            self.sani7.setPosAt(0.0, QPointF(1800.0, 0.0))
+            self.sani7.setPosAt(0.028, QPointF(1800.0, 0.0))
+            self.sani7.setScaleAt(0.32, 1.55, 1.55)
+            self.sani7.setPosAt(0.33, QPointF(0.0, 0.0))
+            self.sani7.setPosAt(0.35, QPointF(-1500.0, 0.0))
+
+        def ScrAni8 (self):
+
+            self.sani8 = QGraphicsItemAnimation(self.ScrewWindow)
+            self.sani8.setTimeLine(self.linhaparaf)
+            self.sani8.setItem(self.PPix8)
+            self.sani8.setPosAt(0.0, QPointF(1500.0, 0.0))
+            self.sani8.setScaleAt(0.35, 2.7, 2.7)
+            self.sani8.setPosAt(0.034, QPointF(1500.0, 0.0))
+            self.sani8.setPosAt(0.35, QPointF(800.0, 0.0))
+            self.sani8.setPosAt(0.365, QPointF(100.0, 0.0))
+            self.sani8.setPosAt(0.49, QPointF(-1400.0, 0.0))
+
 
         #animations finalization:
         SAnim1(self)
@@ -926,6 +983,9 @@ class MainWindow(QWidget):
         SAnim3(self)
         SAnim4(self)
         SAnim5(self)
+        SAnim6(self)
+        ScrewAnim7(self)
+        ScrAni8(self)
         self.linhaparaf.start()
 
 
