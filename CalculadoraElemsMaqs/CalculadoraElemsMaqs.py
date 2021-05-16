@@ -459,7 +459,7 @@ class MainWindow(QWidget):
         self.GearsBtn.move(515, 140)
         self.GearsBtn.clicked.connect(self.CreateNewWin)
 
-        self.ParafBtn = QPushButton("Cálculo de Parafusos", self)
+        self.ParafBtn = QPushButton("Cálculo de Paraf./Reb.", self)
         self.ParafBtn.setFont(QFont("Arial", 20, 8, True))
         self.ParafBtn.setStyleSheet("color: rgb(17, 11, 26)")
         self.ParafBtn.setIcon(QIcon("ParafusoIcon"))
@@ -546,6 +546,7 @@ class MainWindow(QWidget):
         self.SomaFields()
         self.GearsWindowViewandScene()
         self.timeofGears()
+        self.AllGBtns()
         self.GearsWindow.show()
 
 #gears window functions and more:
@@ -797,12 +798,112 @@ class MainWindow(QWidget):
         self.res = self.a + self.b
         self.ResultadoField = QLabel("teste" , self.GearsWindow)
         self.ResultadoField.setText(str(self.res))
-        self.ResultadoField.move(75, 80)
+        self.ResultadoField.move(760, 120)
         self.ResultadoField.show()
         
     def testLabel (self):
 
         self.testeeeee = QLabel("teste", self.Windowisidewindow)
+
+    def AllGBtns (self):
+
+        self.g1Btn = QPushButton("Cálculo de Dp", self.GearsWindow)
+        self.g1Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g1Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g1Btn.move(520, 100)
+
+        self.g2Btn = QPushButton("Cálculo de Módulo", self.GearsWindow)
+        self.g2Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g2Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g2Btn.move(920, 100)
+
+        self.g3Btn = QPushButton("Cálculo de De", self.GearsWindow)
+        self.g3Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g3Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g3Btn.move(520, 150)
+
+        self.g3Btn = QPushButton("Cálculo de h(c+f) com m", self.GearsWindow)
+        self.g3Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g3Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g3Btn.move(820, 150)
+
+        self.g4Btn = QPushButton("Cálculo de módulo tendo h", self.GearsWindow)
+        self.g4Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g4Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g4Btn.move(520, 200)
+
+        self.g5Btn = QPushButton("Cálculo de f tendo m", self.GearsWindow)
+        self.g5Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g5Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g5Btn.move(920, 200)
+
+        self.g6Btn = QPushButton("Cálculo de m tendo f", self.GearsWindow)
+        self.g6Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g6Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g6Btn.move(520, 250)
+
+        self.g7Btn = QPushButton("Cálculo de Di tendo m e Dp", self.GearsWindow)
+        self.g7Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g7Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g7Btn.move(820, 250)
+
+        self.g8Btn = QPushButton("Cálculo de Di tendo z e m", self.GearsWindow)
+        self.g8Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g8Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g8Btn.move(520, 300)
+
+        self.g9Btn = QPushButton("Cálculo de m tendo Di e z", self.GearsWindow)
+        self.g9Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g9Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g9Btn.move(920, 300)
+
+        self.g10Btn = QPushButton("Cálculo de passo tendo m", self.GearsWindow)
+        self.g10Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g10Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g10Btn.move(520, 350)
+
+        self.g11Btn = QPushButton("Cálculo de m tendo p", self.GearsWindow)
+        self.g11Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g11Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g11Btn.move(920, 350)
+
+        self.g12Btn = QPushButton("Cálculo de dist. entre Centros", self.GearsWindow)
+        self.g12Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g12Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g12Btn.move(520, 400)
+
+        self.g13Btn = QPushButton("Cálculo de m com Mt", self.GearsWindow)
+        self.g13Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g13Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g13Btn.move(920, 400)
+
+        self.g14Btn = QPushButton("Cálculo de Dp ECDH", self.GearsWindow)
+        self.g14Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g14Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g14Btn.move(950, 450)
+
+        self.g15Btn = QPushButton("Cálculo de Passo normal ECDH", self.GearsWindow)
+        self.g15Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g15Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g15Btn.move(520, 450)
+
+        self.g16Btn = QPushButton("Cálculo de Mn ECDH", self.GearsWindow)
+        self.g16Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g16Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g16Btn.move(520, 500)
+
+        self.g17Btn = QPushButton("Cálculo de Mn (De e C) ECDH", self.GearsWindow)
+        self.g17Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g17Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g17Btn.move(820, 500)
+
+        self.g18Btn = QPushButton("Cálculo de Âng. pressão ECDH", self.GearsWindow)
+        self.g18Btn.setFont(QFont("Arial", 20, 8, True))
+        self.g18Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.g18Btn.move(520, 550)
+
+        
+
 
 #########################ScrewsWindow########################################
 
@@ -817,6 +918,8 @@ class MainWindow(QWidget):
         #space for function calls
         self.ScrewSceneandView()
         self.ScrewLine()
+        self.ParafBtns()
+        self.ParafLabls()
 
         self.ScrewWindow.show()
 
@@ -1081,6 +1184,110 @@ class MainWindow(QWidget):
         ScrFinal(self)
         self.linhaparaf.start()
 
+#screwWindowBtns:
+
+    def ParafBtns (self):
+
+        self.P1Btn = QPushButton("Conversão Tn Tcis", self.ScrewWindow)
+        self.P1Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P1Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P1Btn.move(520, 225)
+
+        self.P2Btn = QPushButton("Conversão Tcis Tn", self.ScrewWindow)
+        self.P2Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P2Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P2Btn.move(920, 225)
+
+        self.P3Btn = QPushButton("Conversão MPa Kgf", self.ScrewWindow)
+        self.P3Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P3Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P3Btn.move(520, 300)
+
+        self.P4Btn = QPushButton("Conversão Kgf MPa", self.ScrewWindow)
+        self.P4Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P4Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P4Btn.move(920, 300)
+
+        self.P5Btn = QPushButton("Área Circular", self.ScrewWindow)
+        self.P5Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P5Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P5Btn.move(520, 375)
+
+        self.P6Btn = QPushButton("Cálculo Tensão MPa", self.ScrewWindow)
+        self.P6Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P6Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P6Btn.move(920, 375)
+
+        self.P7Btn = QPushButton("Cálculo Tensão Kgf", self.ScrewWindow)
+        self.P7Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P7Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P7Btn.move(520, 450)
+
+        self.P8Btn = QPushButton("Cálculo de raio MPa", self.ScrewWindow)
+        self.P8Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P8Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P8Btn.move(920, 450)
+
+        self.P9Btn = QPushButton("Cálculo raio Kgf", self.ScrewWindow)
+        self.P9Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P9Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P9Btn.move(520, 525)
+
+        self.P10Btn = QPushButton("Parafusos para n pontos", self.ScrewWindow)
+        self.P10Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P10Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P10Btn.move(820, 525)
+
+        self.P11Btn = QPushButton("força suportável por n parafusos", self.ScrewWindow)
+        self.P11Btn.setFont(QFont("Arial", 20, 8, True))
+        self.P11Btn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.P11Btn.move(520, 600)
+
+#Labels:
+
+    def ParafLabls (self):
+
+        self.PLlabel1 = QLabel("Lengenda:", self.ScrewWindow)
+        self.PLlabel1.setFont(QFont("Arial", 20, 8, True))
+        self.PLlabel1.setStyleSheet("color: rgb(17, 11, 26)")
+        self.PLlabel1.move(510.0, 0.0)
+
+        self.PLlabel2 = QLabel("Tcis = Tensão de cisalhamento", self.ScrewWindow)
+        self.PLlabel2.setFont(QFont("Arial", 16, 8, True))
+        self.PLlabel2.setStyleSheet("color: rgb(17, 11, 26)")
+        self.PLlabel2.move(510.0, 30.0)
+
+        self.PLlabel3 = QLabel("Tn = Tensão Normal", self.ScrewWindow)
+        self.PLlabel3.setFont(QFont("Arial", 16, 8, True))
+        self.PLlabel3.setStyleSheet("color: rgb(17, 11, 26)")
+        self.PLlabel3.move(510.0, 50.0)
+
+        self.PLlabel4 = QLabel("clique em info(i) para ver a fórmula", self.ScrewWindow)
+        self.PLlabel4.setFont(QFont("Arial", 16, 8, True))
+        self.PLlabel4.setStyleSheet("color: rgb(17, 11, 26)")
+        self.PLlabel4.move(510.0, 70.0)
+
+        self.PLlabel5 = QLabel("clique em SI[ ] para ver o sistema de unidades", self.ScrewWindow)
+        self.PLlabel5.setFont(QFont("Arial", 16, 8, True))
+        self.PLlabel5.setStyleSheet("color: rgb(17, 11, 26)")
+        self.PLlabel5.move(510.0, 90.0)
+
+        self.PLlabel6 = QLabel("Utilize sempre ponto '.' para casas decimais", self.ScrewWindow)
+        self.PLlabel6.setFont(QFont("Arial", 16, 8, True))
+        self.PLlabel6.setStyleSheet("color: rgb(17, 11, 26)")
+        self.PLlabel6.move(510.0, 110.0)
+
+        self.PLlabel7 = QLabel("Clique em notes para fazer anotações de resultados ", self.ScrewWindow)
+        self.PLlabel7.setFont(QFont("Arial", 16, 8, True))
+        self.PLlabel7.setStyleSheet("color: rgb(17, 11, 26)")
+        self.PLlabel7.move(510.0, 130.0)
+
+        self.PLnotes = QPushButton("Notes", self.ScrewWindow)
+        self.PLnotes.setFont(QFont("Arial", 16, 8, True))
+        self.PLnotes.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLnotes.move(850.0, 5.0)
+
+
 
 #########################RoscaWindow########################################
 
@@ -1091,7 +1298,6 @@ class MainWindow(QWidget):
         self.RoscaWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.RoscaWindow.setWindowTitle("Seção das Roscas")
         self.RoscaWindow.setWindowIcon(QIcon("roscaIcon"))
-        self.testeeeee2 = QLabel("teste2", self.RoscaWindow)
         #space for function calls
         self.RoscaSceneandView()
 
