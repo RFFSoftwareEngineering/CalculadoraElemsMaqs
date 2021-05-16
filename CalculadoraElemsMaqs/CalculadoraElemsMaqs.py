@@ -1102,7 +1102,13 @@ class MainWindow(QWidget):
         self.RScene = QGraphicsScene(self.RoscaWindow)
         #pixmap prep
 
+        self.RPix1 = QGraphicsPixmapItem(QPixmap("ScrewTW"))
+        self.RPix1.setFlag(QGraphicsItem.ItemIsMovable)
+        self.RPix1.setScale(1.1)
+
         #pix add
+
+        self.RScene.addItem(self.RPix1)
 
         #view def
         def RScanVi (self):
@@ -1133,7 +1139,13 @@ class MainWindow(QWidget):
         self.MolaScene = QGraphicsScene(self.molaWindow)
         #pixmap prep
 
+        self.MPix1 = QGraphicsPixmapItem(QPixmap("molaW"))
+        self.MPix1.setFlag(QGraphicsItem.ItemIsMovable)
+        self.MPix1.setScale(0.60)
+
         #pix add
+
+        self.MolaScene.addItem(self.MPix1)
 
         #view def
         def MolView (self):
@@ -1164,7 +1176,13 @@ class MainWindow(QWidget):
         self.Porscene = QGraphicsScene(self.PorcasWindow)
         #pixmap prep
 
+        self.PorPix = QGraphicsPixmapItem(QPixmap("porcaW"))
+        self.PorPix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.PorPix.setScale(0.5)
+
         #pix add
+
+        self.Porscene.addItem(self.PorPix)
 
         #view def
         def PorcView (self):
@@ -1184,7 +1202,6 @@ class MainWindow(QWidget):
         self.EixoWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.EixoWindow.setWindowTitle("Seção dos Eixos")
         self.EixoWindow.setWindowIcon(QIcon("roscaIcon"))
-        self.testeeeee2 = QLabel("teste2", self.EixoWindow)
         #space for function calls
         self.EixoSceneandView()
 
@@ -1195,7 +1212,13 @@ class MainWindow(QWidget):
         self.EixoScene = QGraphicsScene(self.EixoWindow)
         #pixmap prep
 
+        self.EixoPix = QGraphicsPixmapItem(QPixmap("eixoW"))
+        self.EixoPix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.EixoPix.setScale(1.6)
+
         #pix add
+
+        self.EixoScene.addItem(self.EixoPix)
 
         #view def
         def EixoViewf (self):
@@ -1215,11 +1238,27 @@ class MainWindow(QWidget):
         self.ChaveWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.ChaveWindow.setWindowTitle("Seção das Chavetas")
         self.ChaveWindow.setWindowIcon(QIcon("chavetaIcon"))
-        self.testeeeee2 = QLabel("teste2", self.ChaveWindow)
         #space for function calls
+        self.ChaveSceneanView()
 
         self.ChaveWindow.show()
 
+    def ChaveSceneanView (self):
+
+        self.ChaveScene = QGraphicsScene(self.ChaveWindow)
+
+        self.ChavePix = QGraphicsPixmapItem(QPixmap("chavetaW"))
+        self.ChavePix.setFlag(QGraphicsItem.ItemIsMovable)
+        self.ChavePix.setScale(0.6)
+
+        self.ChaveScene.addItem(self.ChavePix)
+
+        def ChaveView (self):
+
+            self.ChaveViewf = QGraphicsView(self.ChaveScene, self.ChaveWindow)
+            self.ChaveViewf.setGeometry(0, 0, 500, 650)
+
+        ChaveViewf(self)
 
 #########################SoldaWindow########################################
 
@@ -1230,10 +1269,27 @@ class MainWindow(QWidget):
         self.SoldaWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.SoldaWindow.setWindowTitle("Seção da Solda")
         self.SoldaWindow.setWindowIcon(QIcon("SoldaIcon"))
-        self.testeeeee2 = QLabel("teste2", self.SoldaWindow)
         #space for function calls
+        self.SoldaSceneandView()
 
         self.SoldaWindow.show()
+
+    def SoldaSceneandView (self):
+
+        self.SoldaScene = QGraphicsScene(self.SoldaWindow)
+
+        self.SoldaPix1 = QGraphicsPixmapItem(QPixmap("SoldaW"))
+        self.SoldaPix1.setFlag(QGraphicsItem.ItemIsMovable)
+        self.SoldaPix1.setScale(0.8)
+
+        self.SoldaScene.addItem(self.SoldaPix1)
+
+        def SoldaView (self):
+
+            self.SoldaViewf = QGraphicsView(self.SoldaScene, self.SoldaWindow)
+            self.SoldaViewf.setGeometry(0, 0, 500, 650)
+
+        SoldaView(self)
 
 
 #########################MancaisWindow########################################
@@ -1243,12 +1299,29 @@ class MainWindow(QWidget):
         self.MancaisWindow = QWidget()
         self.MancaisWindow.setGeometry(150, 150, 1280, 650)
         self.MancaisWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
-        self.MancaisWindow.setWindowTitle("Seção dos Macais")
+        self.MancaisWindow.setWindowTitle("Seção dos Mancais")
         self.MancaisWindow.setWindowIcon(QIcon("mancalIcon"))
-        self.testeeeee2 = QLabel("teste2", self.MancaisWindow)
         #space for function calls
+        self.MancaisScanView()
 
         self.MancaisWindow.show()
+
+    def MancaisScanView (self):
+
+        self.MancalScene = QGraphicsScene(self.MancaisWindow)
+
+        self.MancalPix1 = QGraphicsPixmapItem(QPixmap("mancalW"))
+        self.MancalPix1.setFlag(QGraphicsItem.ItemIsMovable)
+        self.MancalPix1.setScale(1.5)
+
+        self.MancalScene.addItem(self.MancalPix1)
+
+        def MancalView (self):
+
+            self.MancView = QGraphicsView(self.MancalScene, self.MancaisWindow)
+            self.MancView.setGeometry(0, 0, 500, 650)
+
+        MancalView(self)
 
 
 #########################CaboWindow########################################
@@ -1260,10 +1333,28 @@ class MainWindow(QWidget):
         self.CaboWindow.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.CaboWindow.setWindowTitle("Seção dos Cabos")
         self.CaboWindow.setWindowIcon(QIcon("CaboAlma"))
-        self.testeeeee2 = QLabel("teste2", self.CaboWindow)
         #space for function calls
+        self.CaboScnandView()
 
         self.CaboWindow.show()
+
+    def CaboScnandView (self):
+
+        self.CaboScene = QGraphicsScene(self.CaboWindow)
+
+        self.CaboPix1 = QGraphicsPixmapItem(QPixmap("caboW"))
+        self.CaboPix1.setFlag(QGraphicsItem.ItemIsMovable)
+        self.CaboPix1.setScale(1.6)
+
+        self.CaboScene.addItem(self.CaboPix1)
+
+        def CaboViewF (self):
+
+            self.CaboView = QGraphicsView(self.CaboScene, self.CaboWindow)
+            self.CaboView.setGeometry(0, 0, 500, 650)
+
+        CaboViewF(self)
+
 
 
 

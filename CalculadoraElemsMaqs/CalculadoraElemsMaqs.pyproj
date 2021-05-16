@@ -26,11 +26,14 @@
   <ItemGroup>
     <Content Include="beaugears.jpg" />
     <Content Include="CaboAlma.png" />
+    <Content Include="caboW.jpg" />
     <Content Include="cargoship.png" />
     <Content Include="cargoshippic.jpg" />
     <Content Include="chave-parafuso.png" />
     <Content Include="chavetaIcon.png" />
+    <Content Include="chavetaW.jpg" />
     <Content Include="eixoIcon.png" />
+    <Content Include="eixoW.jpg" />
     <Content Include="engine.png" />
     <Content Include="enginewallpaper.jpg" />
     <Content Include="furnace.jpg" />
@@ -44,11 +47,14 @@
     <Content Include="gears5.jpg" />
     <Content Include="gears6.png" />
     <Content Include="mancalIcon.png" />
+    <Content Include="mancalW.jpg" />
     <Content Include="MolaIcon.png" />
+    <Content Include="molaW.jpg" />
     <Content Include="ParafusoIcon.png" />
     <Content Include="plane.png" />
     <Content Include="planepic.jpg" />
     <Content Include="PorcasIcon.png" />
+    <Content Include="porcaW.jpg" />
     <Content Include="RebiteIcon.png" />
     <Content Include="roscaIcon.png" />
     <Content Include="screwhist1.png" />
@@ -64,7 +70,9 @@
     <Content Include="screwhist7.png" />
     <Content Include="screwhist8.png" />
     <Content Include="screwhist9.png" />
+    <Content Include="ScrewTW.jpg" />
     <Content Include="SoldaIcon.png" />
+    <Content Include="SoldaW.jpg" />
     <Content Include="sparky.png" />
     <Content Include="thor-hammer-icon.png" />
     <Content Include="tituloELM.jpg" />
