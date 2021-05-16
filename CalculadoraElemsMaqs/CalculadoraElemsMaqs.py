@@ -1286,6 +1286,83 @@ class MainWindow(QWidget):
         self.PLnotes.setFont(QFont("Arial", 16, 8, True))
         self.PLnotes.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
         self.PLnotes.move(850.0, 5.0)
+        self.PLnotes.clicked.connect(self.FNotes)
+
+        self.PLinfo1 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo1.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo1.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo1.setGeometry(0, 0, 20, 20)
+        self.PLinfo1.move(775.0, 235.0)
+
+        self.PLinfo2 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo2.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo2.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo2.setGeometry(0, 0, 20, 20)
+        self.PLinfo2.move(1175.0, 235.0)
+
+        self.PLinfo3 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo3.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo3.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo3.setGeometry(0, 0, 20, 20)
+        self.PLinfo3.move(785.0, 308.0)
+
+        self.PLinfo4 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo4.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo4.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo4.setGeometry(0, 0, 20, 20)
+        self.PLinfo4.move(1185.0, 308.0)
+
+        self.PLinfo5 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo5.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo5.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo5.setGeometry(0, 0, 20, 20)
+        self.PLinfo5.move(1188.0, 385.0)
+
+        self.PLinfo6 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo6.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo6.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo6.setGeometry(0, 0, 20, 20)
+        self.PLinfo6.move(705.0, 385.0)
+
+        self.PLinfo7 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo7.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo7.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo7.setGeometry(0, 0, 20, 20)
+        self.PLinfo7.move(1185.0, 458.0)
+
+        self.PLinfo8 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo8.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo8.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo8.setGeometry(0, 0, 20, 20)
+        self.PLinfo8.move(790.0, 458.0)
+
+        self.PLinfo9 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo9.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo9.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo9.setGeometry(0, 0, 20, 20)
+        self.PLinfo9.move(1140.0, 531.0)
+
+        self.PLinfo10 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo10.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo10.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo10.setGeometry(0, 0, 20, 20)
+        self.PLinfo10.move(740.0, 531.0)
+
+        self.PLinfo11 = QPushButton("i", self.ScrewWindow)
+        self.PLinfo11.setFont(QFont("Arial", 14, 8, True))
+        self.PLinfo11.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PLinfo11.setGeometry(0, 0, 20, 20)
+        self.PLinfo11.move(930.0, 608.0)
+
+
+    def FNotes (self):
+
+        self.PNotes = QLineEdit("anotações", self.ScrewWindow)
+        self.PNotes.move(995.0, 5.0)
+        self.PNotes.setStyleSheet("color: rgb(17, 11, 26); background-color: white")
+        self.PNotes.setFont(QFont("Arial", 14, 8, True))
+        self.PNotes.setGeometry(995.0, 5.0, 270.0, 150.0)
+        self.PNotes.show()
 
 
 
