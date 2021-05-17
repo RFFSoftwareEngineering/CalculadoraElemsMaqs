@@ -1191,56 +1191,77 @@ class MainWindow(QWidget):
         self.P1Btn.setFont(QFont("Arial", 20, 8, True))
         self.P1Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P1Btn.move(520, 225)
+        self.P1Btn.clicked.connect(self.ScrewCalc1)
+
 
         self.P2Btn = QPushButton("Conversão Tcis Tn", self.ScrewWindow)
         self.P2Btn.setFont(QFont("Arial", 20, 8, True))
         self.P2Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P2Btn.move(920, 225)
+        self.P2Btn.clicked.connect(self.ScrewCalc2)
+
 
         self.P3Btn = QPushButton("Conversão MPa Kgf", self.ScrewWindow)
         self.P3Btn.setFont(QFont("Arial", 20, 8, True))
         self.P3Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P3Btn.move(520, 300)
+        self.P3Btn.clicked.connect(self.ScrewCalc3)
+
 
         self.P4Btn = QPushButton("Conversão Kgf MPa", self.ScrewWindow)
         self.P4Btn.setFont(QFont("Arial", 20, 8, True))
         self.P4Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P4Btn.move(920, 300)
+        self.P4Btn.clicked.connect(self.ScrewCalc4)
+
 
         self.P5Btn = QPushButton("Área Circular", self.ScrewWindow)
         self.P5Btn.setFont(QFont("Arial", 20, 8, True))
         self.P5Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P5Btn.move(520, 375)
+        self.P5Btn.clicked.connect(self.ScrewCalc5)
+
 
         self.P6Btn = QPushButton("Cálculo Tensão MPa", self.ScrewWindow)
         self.P6Btn.setFont(QFont("Arial", 20, 8, True))
         self.P6Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P6Btn.move(920, 375)
+        self.P6Btn.clicked.connect(self.ScrewCalc6)
+
 
         self.P7Btn = QPushButton("Cálculo Tensão Kgf", self.ScrewWindow)
         self.P7Btn.setFont(QFont("Arial", 20, 8, True))
         self.P7Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P7Btn.move(520, 450)
+        self.P7Btn.clicked.connect(self.ScrewCalc7)
+
 
         self.P8Btn = QPushButton("Cálculo de raio MPa", self.ScrewWindow)
         self.P8Btn.setFont(QFont("Arial", 20, 8, True))
         self.P8Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P8Btn.move(920, 450)
+        self.P8Btn.clicked.connect(self.ScrewCalc8)
+
+
 
         self.P9Btn = QPushButton("Cálculo raio Kgf", self.ScrewWindow)
         self.P9Btn.setFont(QFont("Arial", 20, 8, True))
         self.P9Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P9Btn.move(520, 525)
+        self.P9Btn.clicked.connect(self.ScrewCalc9)
 
         self.P10Btn = QPushButton("Parafusos para n pontos", self.ScrewWindow)
         self.P10Btn.setFont(QFont("Arial", 20, 8, True))
         self.P10Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P10Btn.move(820, 525)
+        self.P10Btn.clicked.connect(self.ScrewCalc10)
+
 
         self.P11Btn = QPushButton("força suportável por n parafusos", self.ScrewWindow)
         self.P11Btn.setFont(QFont("Arial", 20, 8, True))
         self.P11Btn.setStyleSheet("color: rgb(17, 11, 26)")
         self.P11Btn.move(520, 600)
+        self.P11Btn.clicked.connect(self.ScrewCalc11)
 
 #Labels:
 
@@ -1324,6 +1345,225 @@ class MainWindow(QWidget):
         self.FormularioLabel = QLabel("segue formulário", self.ScrewInfoWindow)
         self.FormPixmap = QPixmap("formulárioParaf")
         self.FormularioLabel.setPixmap(self.FormPixmap)
+
+    def ScrewCalc1 (self):
+
+        self.ScrewCalcW1 = QWidget()
+        self.ScrewCalcW1.setGeometry(550, 180, 500, 360)
+        self.ScrewCalcW1.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW1.setWindowTitle("Conversão Tn Tcis")
+        self.ScrCalc1Front()
+        self.ScrewCalcW1.show()
+
+
+    def ScrCalc1Front (self):
+
+        self.TnTcis = QLineEdit("Digite Tn", self.ScrewCalcW1)
+        self.TnTcis.setFont(QFont("Arial", 20, 8, True))
+        self.TnTcis.setStyleSheet("color: rgb(17, 11, 26)")
+        self.TnTcis.move(100.0, 40.0)
+
+        self.TnTCisBtn = QPushButton("Calcular Tcis", self.ScrewCalcW1)
+        self.TnTCisBtn.setFont(QFont("Arial", 20, 8, True))
+        self.TnTCisBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.TnTCisBtn.move(100.0, 100.0)
+        self.TnTCisBtn.clicked.connect(self.CalcTnTcis)
+
+    def CalcTnTcis (self):
+
+        self.Input1 = self.TnTcis.text()
+        self.VarTnTcis = float(self.Input1)
+        self.ResVarTnTcis = self.VarTnTcis * 0.7
+        self.RTnTcis = QLabel(self.ScrewCalcW1)
+        self.RTnTcis.setText(str(self.ResVarTnTcis))
+        self.RTnTcis.setFont(QFont("Arial", 20, 8, True))
+        self.RTnTcis.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RTnTcis.move(100.0, 160.0)
+        self.RTnTcis.show()
+        self.RInfoLabel = QLabel("[MPa] ou [Kgf/mm^2]", self.ScrewCalcW1)
+        self.RInfoLabel.setFont(QFont("Arial", 20, 8, True))
+        self.RInfoLabel.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RInfoLabel.move(100.0, 220.0)
+        self.RInfoLabel.show()
+
+
+    def ScrewCalc2 (self):
+
+        self.ScrewCalcW2 = QWidget()
+        self.ScrewCalcW2.setGeometry(550, 180, 500, 360)
+        self.ScrewCalcW2.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW2.setWindowTitle("Conversão Tcis Tn")
+        self.ScrCalc2Front()
+        self.ScrewCalcW2.show()
+
+    def ScrCalc2Front (self):
+
+        self.TcisTn = QLineEdit("Digite Tcis", self.ScrewCalcW2)
+        self.TcisTn.setFont(QFont("Arial", 20, 8, True))
+        self.TcisTn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.TcisTn.move(100.0, 40.0)
+
+        self.TcisTnBtn = QPushButton("Calcular Tn", self.ScrewCalcW2)
+        self.TcisTnBtn.setFont(QFont("Arial", 20, 8, True))
+        self.TcisTnBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.TcisTnBtn.move(100.0, 100.0)
+        self.TcisTnBtn.clicked.connect(self.CalcTcisTn)
+
+    def CalcTcisTn (self):
+
+        self.Input2 = self.TcisTn.text()
+        self.VarTcisTn = float(self.Input2)
+        self.ResVarTcisTn = self.VarTcisTn * 1.428571428571429
+        self.RTcisTn = QLabel(self.ScrewCalcW2)
+        self.RTcisTn.setText(str(self.ResVarTcisTn))
+        self.RTcisTn.setFont(QFont("Arial", 20, 8, True))
+        self.RTcisTn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RTcisTn.move(100.0, 160.0)
+        self.RTcisTn.show()
+        self.RInfoLabel1 = QLabel("[MPa] ou [Kgf/mm^2]", self.ScrewCalcW2)
+        self.RInfoLabel1.setFont(QFont("Arial", 20, 8, True))
+        self.RInfoLabel1.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RInfoLabel1.move(100.0, 220.0)
+        self.RInfoLabel1.show()
+
+    def ScrewCalc3 (self):
+
+        self.ScrewCalcW3 = QWidget()
+        self.ScrewCalcW3.setGeometry(550, 180, 500, 360)
+        self.ScrewCalcW3.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW3.setWindowTitle("Conversão MPa Kgf")
+        self.ScrewCalc3Front()
+        self.ScrewCalcW3.show()
+
+    def ScrewCalc3Front (self):
+
+        self.MPaKgf = QLineEdit("Digite valor MPa", self.ScrewCalcW3)
+        self.MPaKgf.setFont(QFont("Arial", 20, 8, True))
+        self.MPaKgf.setStyleSheet("color: rgb(17, 11, 26)")
+        self.MPaKgf.move(100.0, 40.0)
+
+        self.MPaKgfBtn = QPushButton("Calcular Kgf", self.ScrewCalcW3)
+        self.MPaKgfBtn.setFont(QFont("Arial", 20, 8, True))
+        self.MPaKgfBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.MPaKgfBtn.move(100.0, 100.0)
+        self.MPaKgfBtn.clicked.connect(self.CalcMPaKgf)
+
+    def CalcMPaKgf (self):
+
+        self.Input3 = self.MPaKgf.text()
+        self.VarMPaKgf = float(self.Input3)
+        self.ResVarMPaKgf = self.VarMPaKgf * 0.101972
+        self.RMPaKgf = QLabel(self.ScrewCalcW3)
+        self.RMPaKgf.setText(str(self.ResVarMPaKgf))
+        self.RMPaKgf.setFont(QFont("Arial", 20, 8, True))
+        self.RMPaKgf.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RMPaKgf.move(100.0, 160.0)
+        self.RMPaKgf.show()
+        self.RMPaKgfInfoLabel1 = QLabel("[Kgf/mm^2]", self.ScrewCalcW3)
+        self.RMPaKgfInfoLabel1.setFont(QFont("Arial", 20, 8, True))
+        self.RMPaKgfInfoLabel1.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RMPaKgfInfoLabel1.move(100.0, 220.0)
+        self.RMPaKgfInfoLabel1.show()
+
+    def ScrewCalc4 (self):
+
+        self.ScrewCalcW4 = QWidget()
+        self.ScrewCalcW4.setGeometry(550, 180, 500, 360)
+        self.ScrewCalcW4.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW4.setWindowTitle("Conversão Kgf MPa")
+        self.ScrewCalc4Front()
+        self.ScrewCalcW4.show()
+
+    def ScrewCalc4Front (self):
+
+        self.KgfMPa = QLineEdit("Digite valor Kgf", self.ScrewCalcW4)
+        self.KgfMPa.setFont(QFont("Arial", 20, 8, True))
+        self.KgfMPa.setStyleSheet("color: rgb(17, 11, 26)")
+        self.KgfMPa.move(100.0, 40.0)
+
+        self.KgfMPaBtn = QPushButton("Calcular MPa", self.ScrewCalcW4)
+        self.KgfMPaBtn.setFont(QFont("Arial", 20, 8, True))
+        self.KgfMPaBtn.setStyleSheet("color: rgb(17, 11, 26)")
+        self.KgfMPaBtn.move(100.0, 100.0)
+        self.KgfMPaBtn.clicked.connect(self.CalcKgfMPa)
+
+    def CalcKgfMPa (self):
+
+        self.Input4 = self.KgfMPa.text()
+        self.VarKgfMPa = float(self.Input4)
+        self.ResVarKgfMPa = self.VarKgfMPa * 9.80665
+        self.RKgfMPa = QLabel(self.ScrewCalcW4)
+        self.RKgfMPa.setText(str(self.ResVarKgfMPa))
+        self.RKgfMPa.setFont(QFont("Arial", 20, 8, True))
+        self.RKgfMPa.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RKgfMPa.move(100.0, 160.0)
+        self.RKgfMPa.show()
+        self.RKgfMPaInfoLabel1 = QLabel("[MPa]", self.ScrewCalcW4)
+        self.RKgfMPaInfoLabel1.setFont(QFont("Arial", 20, 8, True))
+        self.RKgfMPaInfoLabel1.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RKgfMPaInfoLabel1.move(100.0, 220.0)
+        self.RKgfMPaInfoLabel1.show()
+
+
+    def ScrewCalc5 (self):
+
+        self.ScrewCalcW5 = QWidget()
+        self.ScrewCalcW5.setGeometry(550, 180, 500, 640)
+        self.ScrewCalcW5.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW5.setWindowTitle("Área Circular")
+
+        self.ScrewCalcW5.show()
+
+
+
+    def ScrewCalc6 (self):
+
+        self.ScrewCalcW6 = QWidget()
+        self.ScrewCalcW6.setGeometry(550, 180, 500, 640)
+        self.ScrewCalcW6.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW6.setWindowTitle("Cálculo Tensão MPa")
+        self.ScrewCalcW6.show()
+
+    def ScrewCalc7 (self):
+
+        self.ScrewCalcW7 = QWidget()
+        self.ScrewCalcW7.setGeometry(550, 180, 500, 640)
+        self.ScrewCalcW7.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW7.setWindowTitle("Cálculo Tensão Kgf")
+        self.ScrewCalcW7.show()
+
+    def ScrewCalc8 (self):
+
+        self.ScrewCalcW8 = QWidget()
+        self.ScrewCalcW8.setGeometry(550, 180, 500, 640)
+        self.ScrewCalcW8.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW8.setWindowTitle("Cálculo de raio MPa")
+        self.ScrewCalcW8.show()
+
+    def ScrewCalc9 (self):
+
+        self.ScrewCalcW9 = QWidget()
+        self.ScrewCalcW9.setGeometry(550, 180, 500, 640)
+        self.ScrewCalcW9.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW9.setWindowTitle("Cálculo raio Kgf")
+        self.ScrewCalcW9.show()
+
+    def ScrewCalc10 (self):
+
+        self.ScrewCalcW10 = QWidget()
+        self.ScrewCalcW10.setGeometry(550, 180, 500, 640)
+        self.ScrewCalcW10.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW10.setWindowTitle("Parafusos para n pontos")
+        self.ScrewCalcW10.show()
+
+    def ScrewCalc11 (self):
+
+        self.ScrewCalcW11 = QWidget()
+        self.ScrewCalcW11.setGeometry(550, 180, 500, 640)
+        self.ScrewCalcW11.setStyleSheet("background-color: rgb(51, 51, 53)")
+        self.ScrewCalcW11.setWindowTitle("força suportável por n parafusos")
+        self.ScrewCalcW11.show()
+
 
 
 #########################RoscaWindow########################################
