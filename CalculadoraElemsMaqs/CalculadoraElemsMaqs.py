@@ -1349,7 +1349,7 @@ class MainWindow(QWidget):
     def ScrewCalc1 (self):
 
         self.ScrewCalcW1 = QWidget()
-        self.ScrewCalcW1.setGeometry(550, 180, 500, 360)
+        self.ScrewCalcW1.setGeometry(550, 180, 700, 300)
         self.ScrewCalcW1.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.ScrewCalcW1.setWindowTitle("Conversão Tn Tcis")
         self.ScrCalc1Front()
@@ -1374,23 +1374,25 @@ class MainWindow(QWidget):
         self.Input1 = self.TnTcis.text()
         self.VarTnTcis = float(self.Input1)
         self.ResVarTnTcis = self.VarTnTcis * 0.7
+        self.ResemKgf = self.ResVarTnTcis * 0.1019
+        self.ResemKgf = str(self.ResemKgf)
         self.RTnTcis = QLabel(self.ScrewCalcW1)
         self.RTnTcis.setText(str(self.ResVarTnTcis))
         self.RTnTcis.setFont(QFont("Arial", 20, 8, True))
-        self.RTnTcis.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RTnTcis.move(100.0, 160.0)
+        self.RTnTcis.setStyleSheet("color: rgb(0, 0, 0)")
+        self.RTnTcis.move(100.0, 180.0)
         self.RTnTcis.show()
-        self.RInfoLabel = QLabel("[MPa] ou [Kgf/mm^2]", self.ScrewCalcW1)
+        self.RInfoLabel = QLabel("[MPa] ou " + self.ResemKgf + " [Kgf/mm²]", self.ScrewCalcW1)
         self.RInfoLabel.setFont(QFont("Arial", 20, 8, True))
-        self.RInfoLabel.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RInfoLabel.move(100.0, 220.0)
+        self.RInfoLabel.setStyleSheet("color: rgb(0, 0, 0)")
+        self.RInfoLabel.move(250.0, 180.0)
         self.RInfoLabel.show()
 
 
     def ScrewCalc2 (self):
 
         self.ScrewCalcW2 = QWidget()
-        self.ScrewCalcW2.setGeometry(550, 180, 500, 360)
+        self.ScrewCalcW2.setGeometry(550, 180, 700, 300)
         self.ScrewCalcW2.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.ScrewCalcW2.setWindowTitle("Conversão Tcis Tn")
         self.ScrCalc2Front()
@@ -1413,17 +1415,19 @@ class MainWindow(QWidget):
 
         self.Input2 = self.TcisTn.text()
         self.VarTcisTn = float(self.Input2)
-        self.ResVarTcisTn = self.VarTcisTn * 1.428571428571429
+        self.ResVarTcisTn = self.VarTcisTn * 1.4285
+        self.ResemMPA = self.ResVarTcisTn * 9.8066
+        self.ResemMPA = str(self.ResemMPA)
         self.RTcisTn = QLabel(self.ScrewCalcW2)
         self.RTcisTn.setText(str(self.ResVarTcisTn))
         self.RTcisTn.setFont(QFont("Arial", 20, 8, True))
-        self.RTcisTn.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RTcisTn.move(100.0, 160.0)
+        self.RTcisTn.setStyleSheet("color: rgb(0, 0, 0)")
+        self.RTcisTn.move(100.0, 180.0)
         self.RTcisTn.show()
-        self.RInfoLabel1 = QLabel("[MPa] ou [Kgf/mm^2]", self.ScrewCalcW2)
+        self.RInfoLabel1 = QLabel("[MPa] ou " + self.ResemMPA + " [Kgf/mm²]", self.ScrewCalcW2)
         self.RInfoLabel1.setFont(QFont("Arial", 20, 8, True))
-        self.RInfoLabel1.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RInfoLabel1.move(100.0, 220.0)
+        self.RInfoLabel1.setStyleSheet("color: rgb(0, 0, 0)")
+        self.RInfoLabel1.move(250.0, 180.0)
         self.RInfoLabel1.show()
 
     def ScrewCalc3 (self):
@@ -2141,4 +2145,4 @@ class MainWindow(QWidget):
 if __name__ == "__main__":
     app = QApplication([])
     janela = MainWindow()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
