@@ -21,9 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="D:\Softwares\CalculadoraElemsMaqs.py">
-      <Link>CalculadoraElemsMaqs.py</Link>
-    </Compile>
+    <Compile Include="CalculadoraElemsMaqs.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="beaugears.jpg" />
