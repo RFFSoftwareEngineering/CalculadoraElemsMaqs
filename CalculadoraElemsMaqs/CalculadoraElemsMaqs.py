@@ -1349,7 +1349,8 @@ class MainWindow(QWidget):
     def ScrewCalc1 (self):
 
         self.ScrewCalcW1 = QWidget()
-        self.ScrewCalcW1.setGeometry(550, 180, 500, 360)
+        self.ScrewCalcW1.setWindowIcon(QIcon("calcIcon"))
+        self.ScrewCalcW1.setGeometry(550, 180, 700, 300)
         self.ScrewCalcW1.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.ScrewCalcW1.setWindowTitle("Conversão Tn Tcis")
         self.ScrCalc1Front()
@@ -1373,18 +1374,14 @@ class MainWindow(QWidget):
 
         self.Input1 = self.TnTcis.text()
         self.VarTnTcis = float(self.Input1)
-        self.ResVarTnTcis = self.VarTnTcis * 0.7
-        self.RTnTcis = QLabel(self.ScrewCalcW1)
-        self.RTnTcis.setText(str(self.ResVarTnTcis))
-        self.RTnTcis.setFont(QFont("Arial", 20, 8, True))
-        self.RTnTcis.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RTnTcis.move(100.0, 160.0)
-        self.RTnTcis.show()
-        self.RInfoLabel = QLabel("[MPa] ou [Kgf/mm^2]", self.ScrewCalcW1)
-        self.RInfoLabel.setFont(QFont("Arial", 20, 8, True))
-        self.RInfoLabel.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RInfoLabel.move(100.0, 220.0)
-        self.RInfoLabel.show()
+        self.ResVarTnTcis = self.VarTnTcis * 0.7        
+        self.TestQline = QLineEdit(self.ScrewCalcW1)
+        self.TestQline.setText(str(self.ResVarTnTcis) +  "   [MPa] ou [Kgf/mm²]")
+        self.TestQline.setFont(QFont("Arial", 20, 8, True))
+        self.TestQline.setStyleSheet("color: rgb(0, 0, 0)")
+        self.TestQline.move(100.0, 160.0)
+        self.TestQline.setGeometry(100, 160, 380, 40)
+        self.TestQline.show()
 
 
     def ScrewCalc2 (self):
