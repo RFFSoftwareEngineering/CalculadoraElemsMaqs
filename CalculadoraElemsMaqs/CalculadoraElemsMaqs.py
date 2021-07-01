@@ -1498,7 +1498,8 @@ class MainWindow(QWidget):
     def ScrewCalc5 (self):
 
         self.ScrewCalcW5 = QWidget()
-        self.ScrewCalcW5.setGeometry(550, 180, 500, 360)
+        self.ScrewCalcW5.setWindowIcon(QIcon("calcIcon"))
+        self.ScrewCalcW5.setGeometry(550, 180, 700, 300)
         self.ScrewCalcW5.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.ScrewCalcW5.setWindowTitle("Área Circular")
         self.ScrewCalc5Front()
@@ -1522,22 +1523,19 @@ class MainWindow(QWidget):
         self.Input5 = self.raio.text()
         self.raioVar = float(self.Input5)
         self.RespRaioVar = (self.raioVar * self.raioVar) * 3.14159265359
-        self.Rraio = QLabel(self.ScrewCalcW5)
-        self.Rraio.setText(str(self.RespRaioVar))
+        self.Rraio = QLineEdit(self.ScrewCalcW5)
+        self.Rraio.setText(str(self.RespRaioVar) + "[mm²]")
         self.Rraio.setFont(QFont("Arial", 20, 8, True))
         self.Rraio.setStyleSheet("color: rgb(17, 11, 26)")
         self.Rraio.move(100.0, 160.0)
+        self.Rraio.setGeometry(100, 160, 450, 40)
         self.Rraio.show()
-        self.RraioInfoLabel1 = QLabel("[mm²]", self.ScrewCalcW5)
-        self.RraioInfoLabel1.setFont(QFont("Arial", 20, 8, True))
-        self.RraioInfoLabel1.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RraioInfoLabel1.move(100.0, 220.0)
-        self.RraioInfoLabel1.show()
+        
 
     def ScrewCalc6 (self):
 
         self.ScrewCalcW6 = QWidget()
-        self.ScrewCalcW6.setGeometry(550, 180, 500, 400)
+        self.ScrewCalcW6.setGeometry(550, 180, 750, 320)
         self.ScrewCalcW6.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.ScrewCalcW6.setWindowTitle("Cálculo Tensão em MPa")
         self.ScrewCalc6Front()
@@ -1551,7 +1549,9 @@ class MainWindow(QWidget):
         self.Forca.setGeometry(0, 0, 350, 40)
         self.Forca.move(100.0, 40.0)
 
-        self.Area = QLineEdit("digite a Área em mm²", self.ScrewCalcW6)
+        try : self.Area = QLineEdit(str(self.RespRaioVar), self.ScrewCalcW6)
+        except : self.Area = QLineEdit("Digite a Área[mm²]", self.ScrewCalcW6)
+        
         self.Area.setFont(QFont("Arial", 20, 8, True))
         self.Area.setStyleSheet("color: rgb(17, 11, 26)")
         self.Area.setGeometry(0, 0, 350, 40)
@@ -1572,19 +1572,16 @@ class MainWindow(QWidget):
         self.VarArea = float(self.Input7)
         self.TensaoMPa = self.VarForca / self.VarArea
 
-        self.RTensaoMPa = QLabel(self.ScrewCalcW6)
-        self.RTensaoMPa.setText(str(self.TensaoMPa))
+        self.RTensaoMPa = QLineEdit(self.ScrewCalcW6)
+        self.RTensaoMPa.setText(str(self.TensaoMPa) + "  [MPa] ou [N/mm²]")
         self.RTensaoMPa.setFont(QFont("Arial", 20, 8, True))
         self.RTensaoMPa.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RTensaoMPa.setGeometry(100, 220, 550, 40)
         self.RTensaoMPa.move(100.0, 220.0)
         self.RTensaoMPa.show()
-
-        self.RTensaoMPaLabel1 = QLabel("[MPa] = [N/mm²]", self.ScrewCalcW6)
-        self.RTensaoMPaLabel1.setFont(QFont("Arial", 20, 8, True))
-        self.RTensaoMPaLabel1.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RTensaoMPaLabel1.move(100.0, 280.0)
-        self.RTensaoMPaLabel1.show()
-
+        
+        
+        
 
     def ScrewCalc7 (self):
 
