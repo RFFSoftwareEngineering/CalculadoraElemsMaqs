@@ -1586,6 +1586,7 @@ class MainWindow(QWidget):
     def ScrewCalc7 (self):
 
         self.ScrewCalcW7 = QWidget()
+        self.ScrewCalcW7.setWindowIcon(QIcon("calcIcon"))
         self.ScrewCalcW7.setGeometry(550, 180, 500, 400)
         self.ScrewCalcW7.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.ScrewCalcW7.setWindowTitle("Cálculo Tensão Kgf")
