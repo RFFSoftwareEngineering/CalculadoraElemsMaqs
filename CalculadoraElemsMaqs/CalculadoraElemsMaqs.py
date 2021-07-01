@@ -1424,7 +1424,8 @@ class MainWindow(QWidget):
     def ScrewCalc3 (self):
 
         self.ScrewCalcW3 = QWidget()
-        self.ScrewCalcW3.setGeometry(550, 180, 500, 360)
+        self.ScrewCalcW3.setWindowIcon(QIcon("calcIcon"))
+        self.ScrewCalcW3.setGeometry(550, 180, 700, 300)
         self.ScrewCalcW3.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.ScrewCalcW3.setWindowTitle("Conversão MPa Kgf")
         self.ScrewCalc3Front()
@@ -1448,22 +1449,19 @@ class MainWindow(QWidget):
         self.Input3 = self.MPaKgf.text()
         self.VarMPaKgf = float(self.Input3)
         self.ResVarMPaKgf = self.VarMPaKgf * 0.101972
-        self.RMPaKgf = QLabel(self.ScrewCalcW3)
-        self.RMPaKgf.setText(str(self.ResVarMPaKgf))
-        self.RMPaKgf.setFont(QFont("Arial", 20, 8, True))
-        self.RMPaKgf.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RMPaKgf.move(100.0, 160.0)
-        self.RMPaKgf.show()
-        self.RMPaKgfInfoLabel1 = QLabel("[Kgf/mm^2]", self.ScrewCalcW3)
-        self.RMPaKgfInfoLabel1.setFont(QFont("Arial", 20, 8, True))
-        self.RMPaKgfInfoLabel1.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RMPaKgfInfoLabel1.move(100.0, 220.0)
-        self.RMPaKgfInfoLabel1.show()
+        self.RMPAKgf = QLineEdit(self.ScrewCalcW3)
+        self.RMPAKgf.setText(str(self.ResVarMPaKgf) +  "   [Kgf/mm²]")
+        self.RMPAKgf.setFont(QFont("Arial", 20, 8, True))
+        self.RMPAKgf.setStyleSheet("color: rgb(0, 0, 0)")
+        self.RMPAKgf.move(100.0, 160.0)
+        self.RMPAKgf.setGeometry(100, 160, 450, 40)
+        self.RMPAKgf.show()
 
     def ScrewCalc4 (self):
 
         self.ScrewCalcW4 = QWidget()
-        self.ScrewCalcW4.setGeometry(550, 180, 500, 360)
+        self.ScrewCalcW4.setWindowIcon(QIcon("calcIcon"))
+        self.ScrewCalcW4.setGeometry(550, 180, 700, 300)
         self.ScrewCalcW4.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.ScrewCalcW4.setWindowTitle("Conversão Kgf MPa")
         self.ScrewCalc4Front()
@@ -1487,17 +1485,14 @@ class MainWindow(QWidget):
         self.Input4 = self.KgfMPa.text()
         self.VarKgfMPa = float(self.Input4)
         self.ResVarKgfMPa = self.VarKgfMPa * 9.80665
-        self.RKgfMPa = QLabel(self.ScrewCalcW4)
-        self.RKgfMPa.setText(str(self.ResVarKgfMPa))
+        self.RKgfMPa = QLineEdit(self.ScrewCalcW4)
+        self.RKgfMPa.setText(str(self.ResVarKgfMPa) + " [MPa]")
         self.RKgfMPa.setFont(QFont("Arial", 20, 8, True))
         self.RKgfMPa.setStyleSheet("color: rgb(17, 11, 26)")
         self.RKgfMPa.move(100.0, 160.0)
+        self.RKgfMPa.setGeometry(100, 160, 450, 40)
         self.RKgfMPa.show()
-        self.RKgfMPaInfoLabel1 = QLabel("[MPa]", self.ScrewCalcW4)
-        self.RKgfMPaInfoLabel1.setFont(QFont("Arial", 20, 8, True))
-        self.RKgfMPaInfoLabel1.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RKgfMPaInfoLabel1.move(100.0, 220.0)
-        self.RKgfMPaInfoLabel1.show()
+        
 
 
     def ScrewCalc5 (self):
