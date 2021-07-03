@@ -1120,7 +1120,7 @@ class MainWindow(QWidget):
 
         self.ScrewCalcW7 = QWidget()
         self.ScrewCalcW7.setWindowIcon(QIcon("calcIcon"))
-        self.ScrewCalcW7.setGeometry(550, 180, 500, 400)
+        self.ScrewCalcW7.setGeometry(550, 180, 750, 320)
         self.ScrewCalcW7.setStyleSheet("background-color: rgb(51, 51, 53)")
         self.ScrewCalcW7.setWindowTitle("Cálculo Tensão Kgf")
         self.ScrewCalc7Front()
@@ -1134,7 +1134,11 @@ class MainWindow(QWidget):
         self.Forca1.setGeometry(0, 0, 350, 40)
         self.Forca1.move(100.0, 40.0)
 
-        self.Area1 = QLineEdit("digite a Área em mm²", self.ScrewCalcW7)
+        
+        try : self.Area1 = QLineEdit(str(self.RespRaioVar), self.ScrewCalcW7)
+        except : self.Area1 = QLineEdit("Digite a Área[mm²]", self.ScrewCalcW7)
+
+
         self.Area1.setFont(QFont("Arial", 20, 8, True))
         self.Area1.setStyleSheet("color: rgb(17, 11, 26)")
         self.Area1.setGeometry(0, 0, 350, 40)
@@ -1155,18 +1159,14 @@ class MainWindow(QWidget):
         self.VarArea1 = float(self.Input9)
         self.TensaoKgf = self.VarForca1 / self.VarArea1
 
-        self.RTensaoKgf = QLabel(self.ScrewCalcW7)
-        self.RTensaoKgf.setText(str(self.TensaoKgf))
+        self.RTensaoKgf = QLineEdit(self.ScrewCalcW7)
+        self.RTensaoKgf.setText(str(self.TensaoKgf) + "  [Kgf/mm²]")
         self.RTensaoKgf.setFont(QFont("Arial", 20, 8, True))
         self.RTensaoKgf.setStyleSheet("color: rgb(17, 11, 26)")
+        self.RTensaoKgf.setGeometry(100, 220, 550, 40)
         self.RTensaoKgf.move(100.0, 220.0)
         self.RTensaoKgf.show()
-
-        self.RTensaoKgfLabel1 = QLabel("[Kgf/mm²]", self.ScrewCalcW7)
-        self.RTensaoKgfLabel1.setFont(QFont("Arial", 20, 8, True))
-        self.RTensaoKgfLabel1.setStyleSheet("color: rgb(17, 11, 26)")
-        self.RTensaoKgfLabel1.move(100.0, 280.0)
-        self.RTensaoKgfLabel1.show()
+        
 
     def ScrewCalc8 (self):
 
